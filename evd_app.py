@@ -23,6 +23,8 @@ if st.session_state.step ==1:
         next_step()
 elif st.session_state.step == 2 and (data['iht_type'] == "ICP >= 20mmHg"):
     st.title("hi")
+elif st.session_state.step == 2 and (data['iht_type'] == "Escalation of ICP Category Compared to Pre-Transport ICP Category"):
+    st.title("bye")
 
         
     
