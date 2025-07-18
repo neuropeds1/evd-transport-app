@@ -10,15 +10,15 @@ iht_type = st.radio("Check one of the following:", ["ICP >= 20mmHg", "Escalation
 st.session_state.inputs["iht_type"] = iht_type
 # step 2 greater than 20
 
-icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg", "≥20 mmHg"], key="icp_cat")
-st.session_state.inputs["icp_category"] = icp
+#icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg", "≥20 mmHg"], key="icp_cat")
+#st.session_state.inputs["icp_category"] = icp
 
 # step 2 other
-icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg"], key="icp_cat")
-st.session_state.inputs["icp_category"] = icp
+#icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg"], key="icp_cat")
+#st.session_state.inputs["icp_category"] = icp
 
-intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
-st.session_state.inputs["intubated"] = intubated
+#intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
+#st.session_state.inputs["intubated"] = intubated
 
 # Step 4: Duration
 #duration = st.slider("Duration of IHT (minutes):", 0, 120, 30, key="duration")
