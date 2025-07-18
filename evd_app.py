@@ -1,7 +1,9 @@
 import streamlit as st
 import math
 
-st.title("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport)")
+st.header("Quality & Safety During Intra - Hospital Transport of Patients With A Clamped External Ventricular Drain") 
+
+st.title("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
 # Select IHT Type
 iht_type = st.selectbox("Type of IHT", ["Diagnostic", "Therapeutic"])
