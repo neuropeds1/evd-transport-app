@@ -29,7 +29,7 @@ days = st.slider("Days since ICU admission:", 0, 30, 5, key="icu_days")
 st.session_state.inputs["days_since_icu"] = days
  
 
- Step 6: CSF Drain
+# Step 6: CSF Drain
 csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5.0, key="csf")
 
 st.session_state.inputs["csf_drain"] = csf_drain
