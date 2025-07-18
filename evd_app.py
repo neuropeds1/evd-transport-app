@@ -35,22 +35,22 @@ while st.session_state.step < 3:
   #      st.session_state.inputs["icp_category"] = icp
    #     next_step()
 # Step 3: Intubation
-intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
-st.session_state.inputs["intubated"] = intubated
+#intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
+#st.session_state.inputs["intubated"] = intubated
 
 # Step 4: Duration
-duration = st.slider("Duration of IHT (minutes):", 0, 120, 30, key="duration")
-st.session_state.inputs["duration"] = duration
+#duration = st.slider("Duration of IHT (minutes):", 0, 120, 30, key="duration")
+#st.session_state.inputs["duration"] = duration
 
 
 # Step 5: Days since ICU admission
 
-days = st.slider("Days since ICU admission:", 0, 30, 5, key="icu_days")
+#days = st.slider("Days since ICU admission:", 0, 30, 5, key="icu_days")
 
-st.session_state.inputs["days_since_icu"] = days
+#st.session_state.inputs["days_since_icu"] = days
  
 
 # Step 6: CSF Drain
-csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5.0, key="csf")
+#csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5.0, key="csf")
 
-st.session_state.inputs["csf_drain"] = csf_drain
+#st.session_state.inputs["csf_drain"] = csf_drain
