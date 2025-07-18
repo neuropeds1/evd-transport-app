@@ -22,7 +22,7 @@ if st.session_state.step ==1:
         st.session_state.inputs["iht_type"] = iht_type
         next_step()
 elif st.session_state.step == 2:
-    data = st.session_states.inputs
+    data = st.session_state.inputs
     st.title(data['iht_type'])
 
         
