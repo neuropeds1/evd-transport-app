@@ -1,7 +1,7 @@
 import streamlit as st
 import math
 
-st.title("EVD Transport Risk Estimator (based on published adjusted odds ratios)")
+st.title("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport)")
 
 # Select IHT Type
 iht_type = st.selectbox("Type of IHT", ["Diagnostic", "Therapeutic"])
