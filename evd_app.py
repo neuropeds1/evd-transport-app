@@ -6,7 +6,8 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With A 
 st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
 
-iht_type = st.radio("Check one of the following:", ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"], key ="iht_type")
+iht_type_options = ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
+iht_type = st.segmented_control("Click One:", iht_type_options, selection_mode="single")
 st.session_state.inputs["iht_type"] = iht_type
 # step 2 greater than 20
 
