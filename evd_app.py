@@ -33,6 +33,33 @@ elif st.session_state.step == 2 and (data['iht_type'] == "Escalation of ICP Cate
     if st.button("Next"):
         st.session_state.inputs["icp_category"] = icp
         next_step()
+# Step 3: Intubation
+elif st.session_state.step == 3:
+    intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
+    if st.button("Next"):
+        st.session_state.inputs["intubated"] = intubated
+        next_step()
+
+# Step 4: Duration
+elif st.session_state.step == 4:
+    duration = st.slider("Duration of IHT (minutes):", 0, 120, 30, key="duration")
+    if st.button("Next"):
+        st.session_state.inputs["duration"] = duration
+        next_step()
+
+# Step 5: Days since ICU admission
+elif st.session_state.step == 5:
+    days = st.slider("Days since ICU admission:", 0, 30, 5, key="icu_days")
+    if st.button("Next"):
+        st.session_state.inputs["days_since_icu"] = days
+        next_step()
+
+# Step 6: CSF Drain
+elif st.session_state.step == 6:
+    csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5.0, key="csf")
+    if st.button("Calculate Risk"):
+        st.session_state.inputs["csf_drain"] = csf_drain
+        next_step()
 
         
     
