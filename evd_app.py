@@ -12,7 +12,7 @@ if "step" not in st.session_state:
 
 if "inputs" not in st.session_state:
     st.session_state.inputs = {}
-
+data = st.session_state.inputs
 def next_step():
     st.session_state.step += 1
 
@@ -21,10 +21,8 @@ if st.session_state.step ==1:
     if st.button("Next"):
         st.session_state.inputs["iht_type"] = iht_type
         next_step()
-elif st.session_state.step == 2:
-    data = st.session_state.inputs
-    st.title(data['iht_type'])
-    st.title(iht_type)
+elif st.session_state.step == 2 & data['iht_type'] == "ICP >= 20mmHg":
+    st.title("hi")
 
         
     
