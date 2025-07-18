@@ -29,7 +29,7 @@ elif st.session_state.step == 2 and (data['iht_type'] == "ICP >= 20mmHg"):
         next_step()
 # step 2 other
 elif st.session_state.step == 2 and (data['iht_type'] == "Escalation of ICP Category Compared to Pre-Transport ICP Category"):
-   icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg"], key="icp_cat")
+    icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg"], key="icp_cat")
     if st.button("Next"):
         st.session_state.inputs["icp_category"] = icp
         next_step()
