@@ -21,7 +21,7 @@ if st.session_state.step ==1:
     if st.button("Next"):
         next_step()
 elif st.session_state.step == 2:
-    print(int_type)
+    st.title(int_type)
 
         
     
