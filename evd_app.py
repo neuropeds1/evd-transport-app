@@ -21,7 +21,7 @@ if st.session_state.step ==1:
     if st.button("Next"):
         st.session_state.inputs["iht_type"] = iht_type
         next_step()
-elif st.session_state.step == 2 & data['iht_type'] == "ICP >= 20mmHg":
+elif st.session_state.step == 2 and (data['iht_type'] == "ICP >= 20mmHg"):
     st.title("hi")
 
         
