@@ -39,8 +39,8 @@ elif st.session_state.step == 2 and (data['iht_type'] == "Escalation of ICP Cate
 # Step 3: Intubation
 
     else:
-    intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
-    st.session_state.inputs["intubated"] = intubated
+        intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
+        st.session_state.inputs["intubated"] = intubated
 
 # Step 4: Duration
 #duration = st.slider("Duration of IHT (minutes):", 0, 120, 30, key="duration")
