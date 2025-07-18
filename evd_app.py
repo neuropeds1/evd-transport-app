@@ -20,8 +20,12 @@ if st.session_state.step ==1:
     int_type = st.radio("Check one of the following:", ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"], key = "iht_type")
     if st.button("Next"):
         next_step()
-elif st.session_state.step ==2:
+elif st.session_state.step ==2 & int_type == "ICP >= 20mmHg":
     icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg", "≥20 mmHg"], key="icp_cat")
+    if st.button("Next"):
+        next_step()
+elif st.session_state.step == 2 & int_type == "Escalation of ICP Category Compared to Pre-Transport ICP Category":
+    icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg"], key="icp_cat")
     if st.button("Next"):
         next_step()
         
