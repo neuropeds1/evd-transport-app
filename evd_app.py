@@ -18,29 +18,29 @@ def next_step():
 
 go = True
 # step 
-while go == True:
-    if st.session_state.step ==1:
-        iht_type = st.radio("Check one of the following:", ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"], key ="iht_type")
-        if st.button("Next"):
-            st.session_state.inputs["iht_type"] = iht_type
-            next_step()
+
+if st.session_state.step ==1:
+    iht_type = st.radio("Check one of the following:", ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"], key ="iht_type")
+    if st.button("Next"):
+        st.session_state.inputs["iht_type"] = iht_type
+        next_step()
 # step 2 greater than 20
-    elif st.session_state.step == 2 and (data['iht_type'] == "ICP >= 20mmHg"):
-        icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg", "≥20 mmHg"], key="icp_cat")
-        if st.button("Next"):
-            st.session_state.inputs["icp_category"] = icp
-   
-            go = False
+elif st.session_state.step == 2 and (data['iht_type'] == "ICP >= 20mmHg"):
+    icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg", "≥20 mmHg"], key="icp_cat")
+    if st.button("Next"):
+        st.session_state.inputs["icp_category"] = icp
+
 # step 2 other
-    elif st.session_state.step == 2 and (data['iht_type'] == "Escalation of ICP Category Compared to Pre-Transport ICP Category"):
-        icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg"], key="icp_cat")
-        if st.button("Next"):
-            st.session_state.inputs["icp_category"] = icp
+elif st.session_state.step == 2 and (data['iht_type'] == "Escalation of ICP Category Compared to Pre-Transport ICP Category"):
+    icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg"], key="icp_cat")
+    if st.button("Next"):
+        st.session_state.inputs["icp_category"] = icp
    
-            go = False
 # Step 3: Intubation
-intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
-st.session_state.inputs["intubated"] = intubated
+
+    elif:
+    intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
+    st.session_state.inputs["intubated"] = intubated
 
 # Step 4: Duration
 #duration = st.slider("Duration of IHT (minutes):", 0, 120, 30, key="duration")
