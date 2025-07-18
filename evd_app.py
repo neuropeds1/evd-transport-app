@@ -17,4 +17,4 @@ def next_step():
     st.session_state.step += 1
 
 if st.session_state.step ==1:
-    int_type = st.radio("Check one fo the following:", ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"])
+    int_type = st.radio("Check one of the following:", ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"], key = "iht_type")
