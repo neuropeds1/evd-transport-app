@@ -18,9 +18,10 @@ def next_step():
 
 if st.session_state.step ==1:
     int_type = st.radio("Check one of the following:", ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"])
-    print(int_type)
     if st.button("Next"):
         next_step()
+elif st.session_state.step == 2:
+    print(int_type)
 
         
     
