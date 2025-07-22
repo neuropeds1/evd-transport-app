@@ -5,17 +5,29 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With A 
 
 st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
+import streamlit as st
+
+# Inject CSS to style the segmented control
 st.markdown("""
     <style>
-    /* Change font size for the segmented control */
+    /* Make the segmented control 5x bigger */
     div[data-testid="stSegmentedControl"] label {
-        font-size: 500px !important;
+        font-size: 2rem !important;       /* Increase font size */
+        padding: 1rem 2rem !important;     /* Increase padding */
+    }
+
+    div[data-testid="stSegmentedControl"] {
+        transform: scale(2.5);             /* Scale entire control */
+        transform-origin: top left;
+        margin-bottom: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
-call = st.segmented_control(" ", ["hi", "bye", "cya"], unsafe_allow_html = True)
-st.write(call)
+# Display the segmented control
+call = st.segmented_control(" ", ["hi", "bye", "cya"])
+st.write("You selected:", call)
+
 
 if call == "hi":
   st.write("blah blah balch ")
