@@ -6,28 +6,24 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With A 
 st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
 # Inject CSS to style the radio buttons like segmented controls
+import streamlit as st
+
+# Create fake segmented control with columns
 st.markdown("""
     <style>
-    /* Hide the default radio circle */
-    div[role="radiogroup"] > label > div:first-child {
-        display: none;
-    }
-
-    /* Style labels to look like buttons */
-    div[role="radiogroup"] > label {
-        background-color: #eeeeee;
-        border: 2px solid #ccc;
+    .segmented-option {
+        font-size: 2.5rem;
         padding: 1rem 2rem;
-        margin-right: 1rem;
-        border-radius: 10px;
+        text-align: center;
+        border: 2px solid #ccc;
+        border-radius: 12px;
         cursor: pointer;
-        font-size: 2rem;         /* Control text size */
-        font-weight: bold;
-        display: inline-block;
+        transition: 0.2s;
     }
-
-    /* Highlight selected */
-    div[role="radiogroup"] > label[data-selected="true"] {
+    .segmented-option:hover {
+        background-color: #f0f0f0;
+    }
+    .segmented-selected {
         background-color: #4CAF50;
         color: white;
         border-color: #4CAF50;
@@ -35,10 +31,24 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Render radio as segmented control
-choice = st.radio(" ", ["hi", "bye", "cya"], horizontal=True)
-st.write("You selected:", choice)
+options = ["hi", "bye", "cya"]
+selected = st.session_state.get("seg_choice", options[0])
 
+cols = st.columns(len(options))
+for i, opt in enumerate(options):
+    with cols[i]:
+        is_selected = selected == opt
+        if st.button(
+            f'<div class="segmented-option {"segmented-selected" if is_selected else ""}">{opt}</div>',
+            key=f"seg_{opt}",
+            use_container_width=True,
+            help=None,
+            type="primary" if is_selected else "secondary",
+            unsafe_allow_html=True,
+        ):
+            st.session_state.seg_choice = opt
+
+st.write("You selected:", st.session_state.seg_choice)
 
 """
 iht_type_options = ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
