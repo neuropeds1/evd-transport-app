@@ -14,7 +14,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-call = st.segmented_control(" ", ["hi", "bye", "cya"])
+call = st.segmented_control(" ", ["hi", "bye", "cya"], unsafe_allow_html = True)
 st.write(call)
 
 if call == "hi":
