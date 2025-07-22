@@ -9,7 +9,7 @@ st.markdown("""
     <style>
     /* Change font size for the segmented control */
     div[data-testid="stSegmentedControl"] label {
-        font-size: 40px !important;
+        font-size: 500px !important;
     }
     </style>
 """, unsafe_allow_html=True)
