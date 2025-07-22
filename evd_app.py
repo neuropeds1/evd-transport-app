@@ -5,24 +5,38 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With A 
 
 st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
-import streamlit as st
-
-# Inject CSS to style the segmented control
-
-
-# Enlarge the segmented control using transform: scale
+# Inject CSS to style the radio buttons like segmented controls
 st.markdown("""
     <style>
-    div[data-testid="stSegmentedControl"] {
-        transform: scale(5);             /* Make it 5x bigger */
-        transform-origin: top left;      /* Anchor it so it doesn't float away */
-        margin-bottom: 4rem;             /* Add space below */
+    /* Hide the default radio circle */
+    div[role="radiogroup"] > label > div:first-child {
+        display: none;
+    }
+
+    /* Style labels to look like buttons */
+    div[role="radiogroup"] > label {
+        background-color: #eeeeee;
+        border: 2px solid #ccc;
+        padding: 1rem 2rem;
+        margin-right: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 2rem;         /* Control text size */
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    /* Highlight selected */
+    div[role="radiogroup"] > label[data-selected="true"] {
+        background-color: #4CAF50;
+        color: white;
+        border-color: #4CAF50;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Render the segmented control
-choice = st.segmented_control(" ", ["hi", "bye", "cya"])
+# Render radio as segmented control
+choice = st.radio(" ", ["hi", "bye", "cya"], horizontal=True)
 st.write("You selected:", choice)
 
 
