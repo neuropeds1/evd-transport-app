@@ -8,25 +8,22 @@ st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra -
 import streamlit as st
 
 # Inject CSS to style the segmented control
+
+
+# Enlarge the segmented control using transform: scale
 st.markdown("""
     <style>
-    /* Make the segmented control 5x bigger */
-    div[data-testid="stSegmentedControl"] label {
-        font-size: 2rem !important;       /* Increase font size */
-        padding: 1rem 2rem !important;     /* Increase padding */
-    }
-
     div[data-testid="stSegmentedControl"] {
-        transform: scale(2.5);             /* Scale entire control */
-        transform-origin: top left;
-        margin-bottom: 2rem;
+        transform: scale(5);             /* Make it 5x bigger */
+        transform-origin: top left;      /* Anchor it so it doesn't float away */
+        margin-bottom: 4rem;             /* Add space below */
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Display the segmented control
-call = st.segmented_control(" ", ["hi", "bye", "cya"])
-st.write("You selected:", call)
+# Render the segmented control
+choice = st.segmented_control(" ", ["hi", "bye", "cya"])
+st.write("You selected:", choice)
 
 
 if call == "hi":
