@@ -12,28 +12,33 @@ import streamlit as st
 options = ["hi", "bye", "cya"]
 default_index = 0
 
-# Custom CSS for selectbox to mimic segmented control
+# Apply CSS
 st.markdown("""
     <style>
+    /* Wrapper to increase box height and font size */
     div[data-baseweb="select"] {
-        font-size: 2rem !important;
+        font-size: 2.2rem !important;
+        min-height: 4rem !important;
     }
 
-    /* Drop-down text size */
-    .css-1d3z3hw {
-        font-size: 2rem !important;
-    }
-
-    /* Selected value text */
+    /* Selected value text + box styling */
     .css-1pahdxg-control, .css-1d391kg-control {
-        font-size: 2rem !important;
-        padding: 0.5rem;
-        border-radius: 8px;
+        font-size: 2.2rem !important;
+        padding: 1.2rem !important;
+        min-height: 4.5rem !important;
+        border-radius: 10px !important;
+        border: 3px solid #4CAF50 !important;
     }
 
-    /* Dropdown menu items */
+    /* Dropdown menu text */
     .css-11unzgr {
+        font-size: 2.2rem !important;
+    }
+
+    /* Dropdown items */
+    .css-1n7v3ny-option {
         font-size: 2rem !important;
+        padding: 1rem !important;
     }
     </style>
 """, unsafe_allow_html=True)
