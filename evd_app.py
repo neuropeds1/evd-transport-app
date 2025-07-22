@@ -5,7 +5,16 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With A 
 
 st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
-call = st.segmented_control("hi",["hi", "cya","bye"])
+st.markdown("""
+    <style>
+    /* Change font size for the segmented control */
+    div[data-testid="stSegmentedControl"] label {
+        font-size: 20px !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+call = st.segmented_control( by)
 st.write(call)
 
 if call == "hi":
