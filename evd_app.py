@@ -7,7 +7,9 @@ st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra -
 
 call = st.segmented_control("hi",["hi", "cya","bye"])
 st.write(call)
-  
+
+if call == "hi":
+  st.write("blah blah balch ")
 """
 iht_type_options = ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
 iht_type = st.segmented_control("Click One:", iht_type_options, selection_mode="single")
