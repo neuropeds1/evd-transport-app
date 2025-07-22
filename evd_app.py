@@ -5,47 +5,38 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With A 
 
 st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
-# Inject CSS to style the radio buttons like segmented controls
 import streamlit as st
 
-# Set options
-options = ["hi", "bye", "cya"]
-default_index = 0
-
-# Apply CSS
+# Apply CSS to enlarge the selectbox properly
 st.markdown("""
     <style>
-    /* Wrapper to increase box height and font size */
+    /* Enlarge the entire select container */
     div[data-baseweb="select"] {
-        font-size: 2.2rem !important;
-        min-height: 4rem !important;
+        font-size: 2rem;
+        min-height: 80px;
     }
 
-    /* Selected value text + box styling */
-    .css-1pahdxg-control, .css-1d391kg-control {
-        font-size: 2.2rem !important;
-        padding: 1.2rem !important;
-        min-height: 4.5rem !important;
-        border-radius: 10px !important;
-        border: 3px solid #4CAF50 !important;
+    /* Enlarge control area */
+    div[data-baseweb="select"] > div {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        min-height: 4rem;
+        border-width: 3px;
+        border-radius: 12px;
     }
 
-    /* Dropdown menu text */
-    .css-11unzgr {
-        font-size: 2.2rem !important;
-    }
-
-    /* Dropdown items */
-    .css-1n7v3ny-option {
-        font-size: 2rem !important;
-        padding: 1rem !important;
+    /* Enlarge dropdown options */
+    div[data-baseweb="menu"] {
+        font-size: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Render selectbox
-selection = st.selectbox("Choose one", options, index=default_index)
+# Selectbox
+options = ["hi", "bye", "cya"]
+selection = st.selectbox(" ", options)
 st.write("You selected:", selection)
+
 
 """
 iht_type_options = ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
