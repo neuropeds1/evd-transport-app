@@ -8,47 +8,49 @@ st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra -
 # Inject CSS to style the radio buttons like segmented controls
 import streamlit as st
 
-# Create fake segmented control with columns
+# Setup state
+options = ["hi", "bye", "cya"]
+if "seg_choice" not in st.session_state:
+    st.session_state["seg_choice"] = options[0]
+
+# Inject CSS styling
 st.markdown("""
     <style>
-    .segmented-option {
-        font-size: 2.5rem;
+    .segmented-button {
+        font-size: 2rem;
         padding: 1rem 2rem;
-        text-align: center;
         border: 2px solid #ccc;
         border-radius: 12px;
-        cursor: pointer;
+        text-align: center;
+        margin: 0.5rem;
+        background-color: #eee;
         transition: 0.2s;
     }
-    .segmented-option:hover {
-        background-color: #f0f0f0;
+
+    .segmented-button:hover {
+        background-color: #ddd;
     }
+
     .segmented-selected {
-        background-color: #4CAF50;
-        color: white;
-        border-color: #4CAF50;
+        background-color: #4CAF50 !important;
+        color: white !important;
+        border-color: #4CAF50 !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
-options = ["hi", "bye", "cya"]
-selected = st.session_state.get("seg_choice", options[0])
-
+# Layout buttons
 cols = st.columns(len(options))
 for i, opt in enumerate(options):
+    selected = st.session_state["seg_choice"] == opt
+    btn_class = "segmented-button segmented-selected" if selected else "segmented-button"
+    
     with cols[i]:
-        is_selected = selected == opt
-        if st.button(
-            f'<div class="segmented-option {"segmented-selected" if is_selected else ""}">{opt}</div>',
-            key=f"seg_{opt}",
-            use_container_width=True,
-            help=None,
-            type="primary" if is_selected else "secondary",
-            unsafe_allow_html=True,
-        ):
-            st.session_state.seg_choice = opt
+        st.markdown(f'<div class="{btn_class}">{opt}</div>', unsafe_allow_html=True)
+        if st.button(f"Select {opt}", key=f"seg_{opt}"):
+            st.session_state["seg_choice"] = opt
 
-st.write("You selected:", st.session_state.seg_choice)
+st.write("You selected:", st.session_state["seg_choice"])
 
 """
 iht_type_options = ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
