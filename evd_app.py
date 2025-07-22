@@ -5,16 +5,9 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With A 
 
 st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra - Hospital Transport")
 
-
-with st.expander("Patient Information"):
- st.write("Basic info")
- col1, col2 = st.colums(2)
- with col1:
-  st.write("hi")
- with col2:
-  st.write("bye")
+st.segmented_control(["hi", "cya","bye"])
   
-
+"""
 iht_type_options = ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
 iht_type = st.segmented_control("Click One:", iht_type_options, selection_mode="single")
 st.session_state.inputs["iht_type"] = iht_type
@@ -42,4 +35,4 @@ st.session_state.inputs["days_since_icu"] = days
 # Step 6: CSF Drain
 csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5.0, key="csf")
 
-st.session_state.inputs["csf_drain"] = csf_drain
+st.session_state.inputs["csf_drain"] = csf_drain"""
