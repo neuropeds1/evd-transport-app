@@ -8,49 +8,39 @@ st.header("Calculating the Risk of Intracranial Pressure Elevaton During Intra -
 # Inject CSS to style the radio buttons like segmented controls
 import streamlit as st
 
-# Setup state
+# Set options
 options = ["hi", "bye", "cya"]
-if "seg_choice" not in st.session_state:
-    st.session_state["seg_choice"] = options[0]
+default_index = 0
 
-# Inject CSS styling
+# Custom CSS for selectbox to mimic segmented control
 st.markdown("""
     <style>
-    .segmented-button {
-        font-size: 2rem;
-        padding: 1rem 2rem;
-        border: 2px solid #ccc;
-        border-radius: 12px;
-        text-align: center;
-        margin: 0.5rem;
-        background-color: #eee;
-        transition: 0.2s;
+    div[data-baseweb="select"] {
+        font-size: 2rem !important;
     }
 
-    .segmented-button:hover {
-        background-color: #ddd;
+    /* Drop-down text size */
+    .css-1d3z3hw {
+        font-size: 2rem !important;
     }
 
-    .segmented-selected {
-        background-color: #4CAF50 !important;
-        color: white !important;
-        border-color: #4CAF50 !important;
+    /* Selected value text */
+    .css-1pahdxg-control, .css-1d391kg-control {
+        font-size: 2rem !important;
+        padding: 0.5rem;
+        border-radius: 8px;
+    }
+
+    /* Dropdown menu items */
+    .css-11unzgr {
+        font-size: 2rem !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Layout buttons
-cols = st.columns(len(options))
-for i, opt in enumerate(options):
-    selected = st.session_state["seg_choice"] == opt
-    btn_class = "segmented-button segmented-selected" if selected else "segmented-button"
-    
-    with cols[i]:
-        st.markdown(f'<div class="{btn_class}">{opt}</div>', unsafe_allow_html=True)
-        if st.button(f"Select {opt}", key=f"seg_{opt}"):
-            st.session_state["seg_choice"] = opt
-
-st.write("You selected:", st.session_state["seg_choice"])
+# Render selectbox
+selection = st.selectbox("Choose one", options, index=default_index)
+st.write("You selected:", selection)
 
 """
 iht_type_options = ["ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
