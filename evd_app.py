@@ -57,6 +57,7 @@ if next == True:
     risk *= risk_csf
     risk *= risk_iht
     risk *= risk_unscheduled
+    risk *= 0.118
     st.write(risk)
       
     
