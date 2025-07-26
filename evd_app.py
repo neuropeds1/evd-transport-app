@@ -27,4 +27,4 @@ unscheduled = st.radio("Is the IHT Unscheduled", ["Yes", "No"], key="unscheduled
 next = st.button("Submit")
 
 if next == True:
-  st.write(iht_type)
+  st.write(icp)
