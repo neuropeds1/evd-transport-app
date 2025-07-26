@@ -27,6 +27,7 @@ IHT = st.segmented_control("Click One:", ["IHT for Therapeutic Procedure", "IHT 
 st.write("(Therapeutic procedures include procedures in the operating room or the angiography suite. Diagnostic procedures are defined as transports to CT or MRI suites).")
 
 unscheduled = st.radio("Is the IHT Unscheduled? (Ex. Emergency Transport)", ["Yes", "No"], key="unscheduled")
+result = 0
 
 log_data = {
         "timestamp": datetime.now().isoformat(),
