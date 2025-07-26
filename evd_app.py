@@ -21,7 +21,7 @@ csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5
 
 IHT = st.segmented_control("Click One:", ["IHT for Therapeutic Procedure", "IHT for Diagnostic Procedure"], selection_mode="single")
 
-unscheduled = st.radio("Is the IHT Unscheduled", ["Yes", "No"], key="icp_cat")
+unscheduled = st.radio("Is the IHT Unscheduled", ["Yes", "No"], key="unsceduled")
 
 
 next = st.button("Submit")
