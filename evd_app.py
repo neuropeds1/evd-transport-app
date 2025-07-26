@@ -58,7 +58,8 @@ if next == True:
     risk *= risk_iht
     risk *= risk_unscheduled
     risk *= 0.118
-    st.write(risk)
+    final_risk = rount_to_2(risk)
+    st.header(final_risk)
       
     
     
