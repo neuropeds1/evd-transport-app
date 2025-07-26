@@ -95,11 +95,13 @@ if next == True:
 
     log_file = "icp_risk_log.csv"
     file_exists = os.path.exists(log_file)
+          
     
-    # Build dictionary of values
-    
+    st.write("Loggin this data:" log_data)
 
-    # Write row to CSV
+        
+    st.write("Fieldnames:" log_data_kets())
+          
     with open(log_file, mode="a", newline="", encoding = "utf-8") as f:
       writer = csv.DictWriter(f, fieldnames=log_data.keys())
     if not file_exists:
