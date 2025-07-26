@@ -92,21 +92,6 @@ if next == True:
         Risk Category: {risk_label}
     </div>
     """, unsafe_allow_html=True)
-
-    log_file = "icp_risk_log.csv"
-    file_exists = os.path.exists(log_file)
-          
-    
-    st.write("Loggin this data:", log_data)
-
-        
-    st.write("Fieldnames:", log_data.keys())
-          
-    with open(log_file, mode="a", newline="", encoding = "utf-8") as f:
-      writer = csv.DictWriter(f, fieldnames=log_data.keys())
-    if not file_exists:
-      writer.writeheader()
-    writer.writerow(log_data)
     
 st.divider()
 st.write("Calculator has NOT been prospectively evaluated. Please use it at your discretion.")
