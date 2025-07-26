@@ -19,7 +19,12 @@ days = st.slider("Days since ICU admission:", 0, 30, 5, key="icu_days")
 
 csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5.0, key="csf")
 
-next = st.button("Next")
+IHT = st.segmented_control("Click One:", ["IHT for Therapeutic Procedure", "IHT for Diagnostic Procedure"], selection_mode="single")
+
+unscheduled = icp = st.radio("Is the IHT Unscheduled", ["Yes", "No"], key="icp_cat")
+
+
+next = st.button("Submit")
 
 if next == True:
   st.write("sup")
