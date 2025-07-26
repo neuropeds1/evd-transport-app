@@ -13,7 +13,7 @@ icp = st.radio("Pre-IHT ICP category:", ["<15 mmHg", "15–19 mmHg", "≥20 mmHg
 
 intubated = st.radio("Is the patient intubated?", ["Yes", "No"], key="intubation")
 
-duration = st.slider("Duration of IHT (minutes):", min_value = 0, max_value = 120, value = 30, steps = 10, key = "duration")
+duration = st.slider("Duration of IHT (minutes):", 0,120,30, key = "duration")
 
 days = st.slider("Days since ICU admission:", 0, 30, 5, key="icu_days")
 
@@ -38,7 +38,7 @@ if next == True:
       risk_intubated = 0.58
     if intubated == "No":
       risk_intubated = 1
-    risk_duration = duration*0.95
+    risk_duration = (duration/10)*0.95
     risk_days = days*0.97
     risk_csf = csf_drain*1.11
     if IHT == "IHT for Therapeutic Procedure":
