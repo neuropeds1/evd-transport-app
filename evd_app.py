@@ -1,6 +1,8 @@
 import streamlit as st
 import math
 import os
+import pandas as pd
+
 st.title("Quality & Safety During Intra - Hospital Transport (IHT) of Patients With a Clamped External Ventricular Drain")
 
 st.header("Calculating the Risk of Intracranial Pressure (ICP) Elevation During Intra - Hospital Transport")
@@ -23,7 +25,7 @@ IHT = st.segmented_control("Click One:", ["IHT for Therapeutic Procedure", "IHT 
 
 st.write("(Therapeutic procedures include procedures in the operating room or the angiography suite. Diagnostic procedures are defined as transports to CT or MRI suites).")
 
-unscheduled = st.radio("Is the IHT Unscheduled (Ex. Emergency Transport)", ["Yes", "No"], key="unscheduled")
+unscheduled = st.radio("Is the IHT Unscheduled? (Ex. Emergency Transport)", ["Yes", "No"], key="unscheduled")
 
 next = st.button("Submit")
 
@@ -77,6 +79,29 @@ if next == True:
         Risk Category: {risk_label}
     </div>
     """, unsafe_allow_html=True)
+
+    csv_file = "evd_transport_log.csv"
+    # Build dictionary of values
+    data = {
+        "ICP_Category": icp,
+        "Intubated": intubated,
+        "IHT_Duration_Min": duration,
+        "ICU_Days": days,
+        "CSF_Output": csf_drain,
+        "Unscheduled": unscheduled,
+        "Risk": result
+    }
+
+    # Convert to DataFrame and append to CSV
+    df = pd.DataFrame([data])
+
+    # Append or create new
+    if os.path.exists(csv_file):
+        df.to_csv(csv_file, mode='a', header=False, index=False)
+    else:
+        df.to_csv(csv_file, mode='w', header=True, index=False)
+
+    
 st.divider()
 st.write("Calculator has NOT been prospectively evaluated. Please use it at your discretion.")
 st.write("Reference: Chaikittisilpa N, Lele AV, Lyons VH, Nair BG, Newman SF, Blissitt PA, Vavilala MS. Risks of Routinely Clamping External Ventricular Drains for Intrahospital Transport in Neurocritically Ill Cerebrovascular Patients. Neurocrit Care. 2017 Apr;26(2):196-204. doi: 10.1007/s12028-016-0308-0. PMID: 27757914.")
@@ -111,4 +136,3 @@ with open(counter_file, "w") as f:
 # Display at bottom of page
 st.markdown(f"<p style='text-align:center; font-size:12px; color:gray;'>Total Visits: {count}</p>", unsafe_allow_html=True)
 
-    
