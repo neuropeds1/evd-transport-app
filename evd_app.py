@@ -19,4 +19,8 @@ days = st.slider("Days since ICU admission:", 0, 30, 5, key="icu_days")
 
 csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5.0, key="csf")
 
+next = st.button("Next")
+
+if next == "Next":
+  st.title("sup")
 
