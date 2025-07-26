@@ -97,10 +97,10 @@ if next == True:
     file_exists = os.path.exists(log_file)
           
     
-    st.write("Loggin this data:" log_data)
+    st.write("Loggin this data:", log_data)
 
         
-    st.write("Fieldnames:" log_data_kets())
+    st.write("Fieldnames:", log_data.keys())
           
     with open(log_file, mode="a", newline="", encoding = "utf-8") as f:
       writer = csv.DictWriter(f, fieldnames=log_data.keys())
