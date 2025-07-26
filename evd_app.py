@@ -86,5 +86,29 @@ st.markdown(
     "<p style='color:black; font-size:12px;'>Last Updated: 07/26/2025 ",
     unsafe_allow_html=True
 )
-    
+
+st.divider()
+
+# File to store visit count
+counter_file = "visit_count.txt"
+
+# Initialize count
+if not os.path.exists(counter_file):
+    with open(counter_file, "w") as f:
+        f.write("0")
+
+# Read current count
+with open(counter_file, "r") as f:
+    count = int(f.read())
+
+# Increment
+count += 1
+
+# Save updated count
+with open(counter_file, "w") as f:
+    f.write(str(count))
+
+# Display at bottom of page
+st.markdown(f"<p style='text-align:center; font-size:12px; color:gray;'>Total Visits: {count}</p>", unsafe_allow_html=True)
+
     
