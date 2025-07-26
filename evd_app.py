@@ -59,7 +59,8 @@ if next == True:
     risk *= risk_unscheduled
     risk *= 0.118
     final_risk = round(risk,2)
-    st.header(final_risk)
+    result = str(final_risk) + "%"
+    st.header(result)
       
     
     
