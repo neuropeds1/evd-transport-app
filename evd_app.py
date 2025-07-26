@@ -83,7 +83,7 @@ st.write("Reference: Chaikittisilpa N, Lele AV, Lyons VH, Nair BG, Newman SF, Bl
 st.write("App Developers: Aria Lele, Abhijit Lele")
 st.write("All RIGHTS RESERVED")
 st.markdown(
-    "<p style='color:black; font-size:12px;'>Last Updated: 07/26/2025 /p>",
+    "<p style='color:black; font-size:12px;'>Last Updated: 07/26/2025 ",
     unsafe_allow_html=True
 )
     
