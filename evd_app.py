@@ -85,7 +85,7 @@ if next == True:
     file_exists = os.path.exists(log_file)
     
     # Build dictionary of values
-    data = {
+    log_data = {
         "timestamp": datetime.now().isoformat(),
         "ICP_Category": icp,
         "Intubated": intubated,
