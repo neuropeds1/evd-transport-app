@@ -85,6 +85,6 @@ st.write("All RIGHTS RESERVED")
 st.markdown(
     "<p style='color:black; font-size:12px;'>Last Updated: 07/26/2025 /p>",
     unsafe_allow_html=True
-
+)
     
     
