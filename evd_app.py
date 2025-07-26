@@ -59,16 +59,15 @@ if next == True:
     risk *= risk_unscheduled
     risk *= 0.118
     final_risk = round(risk,2)
-    
     if final_risk <= 20:
-    risk_label = "✅ LOW"
-    banner_color = "green"
+      risk_label = "✅ LOW"
+      banner_color = "green"
     elif 21 <= final_risk <= 50:
-    risk_label = "⚠️ MODERATE"
-    banner_color = "orange"
+      risk_label = "⚠️ MODERATE"
+      banner_color = "orange"
     else:
-    risk_label = "🟥 HIGH"
-    banner_color = "red"
+      risk_label = "🟥 HIGH"
+      banner_color = "red"
     # Build HTML banner
     st.markdown(f"""
     <div style="padding: 1rem; border-radius: 8px; background-color: {banner_color}; color: white; font-weight: bold; font-size: 1.2rem;">
