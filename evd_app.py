@@ -124,7 +124,7 @@ if not os.path.exists(counter_file):
 
 # Read current count
 with open(counter_file, "r") as f:
-    count = int(f.read())
+  count = int(f.read())
 
 # Increment
 count += 1
