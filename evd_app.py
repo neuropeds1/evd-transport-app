@@ -58,11 +58,12 @@ if next == True:
     risk *= risk_iht
     risk *= risk_unscheduled
     risk *= 0.118
-    final_risk = round(risk,2)
-    if final_risk <= 20:
+    final_risk = min(risk, 100.0)
+    result = round(final_risk,2)
+    if result <= 20:
       risk_label = "✅ LOW"
       banner_color = "green"
-    elif 21 <= final_risk <= 50:
+    elif 21 <= result <= 50:
       risk_label = "⚠️ MODERATE"
       banner_color = "orange"
     else:
@@ -71,7 +72,7 @@ if next == True:
     # Build HTML banner
     st.markdown(f"""
     <div style="padding: 1rem; border-radius: 8px; background-color: {banner_color}; color: white; font-weight: bold; font-size: 1.2rem;">
-        The absolute risk of ICP ≥ 20 mmHg during the IHT is {final_risk}%. <br>
+        The absolute risk of ICP ≥ 20 mmHg during the IHT is {result}%. <br>
         Risk Category: {risk_label}
     </div>
     """, unsafe_allow_html=True)
