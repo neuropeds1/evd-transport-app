@@ -21,4 +21,5 @@ csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5
 
 next = st.button("Next")
 
-st.write(next)
+if next == True:
+  st.write("sup")
