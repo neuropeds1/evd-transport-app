@@ -82,7 +82,9 @@ st.write("Calculator has NOT been prospectively evaluated. Please use it at your
 st.write("Reference: Chaikittisilpa N, Lele AV, Lyons VH, Nair BG, Newman SF, Blissitt PA, Vavilala MS. Risks of Routinely Clamping External Ventricular Drains for Intrahospital Transport in Neurocritically Ill Cerebrovascular Patients. Neurocrit Care. 2017 Apr;26(2):196-204. doi: 10.1007/s12028-016-0308-0. PMID: 27757914.")
 st.write("App Developers: Aria Lele, Abhijit Lele")
 st.write("All RIGHTS RESERVED")
-st.write("07/26/2025")
+st.markdown(
+    "<p style='color:black; font-size:12px;'>Last Updated: 07/26/2025 /p>",
+    unsafe_allow_html=True
 
     
     
