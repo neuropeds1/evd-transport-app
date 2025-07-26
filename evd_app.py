@@ -28,6 +28,17 @@ st.write("(Therapeutic procedures include procedures in the operating room or th
 
 unscheduled = st.radio("Is the IHT Unscheduled? (Ex. Emergency Transport)", ["Yes", "No"], key="unscheduled")
 
+log_data = {
+        "timestamp": datetime.now().isoformat(),
+        "ICP_Category": icp,
+        "Intubated": intubated,
+        "IHT_Duration_Min": duration,
+        "ICU_Days": days,
+        "CSF_Output": csf_drain,
+        "Unscheduled": unscheduled,
+        "Risk": result
+    }
+
 next = st.button("Submit")
 
 if next == True:
@@ -85,16 +96,7 @@ if next == True:
     file_exists = os.path.exists(log_file)
     
     # Build dictionary of values
-    log_data = {
-        "timestamp": datetime.now().isoformat(),
-        "ICP_Category": icp,
-        "Intubated": intubated,
-        "IHT_Duration_Min": duration,
-        "ICU_Days": days,
-        "CSF_Output": csf_drain,
-        "Unscheduled": unscheduled,
-        "Risk": result
-    }
+    
 
     # Write row to CSV
     with open("icp_risk_log.csv", mode="a", newline="", encoding = "utf-8") as f:
