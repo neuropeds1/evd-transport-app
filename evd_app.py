@@ -5,7 +5,7 @@ st.title("Quality & Safety During Intra - Hospital Transport of Patients With a 
 
 st.header("Calculating the Risk of Intracranial Pressure Elevation During Intra - Hospital Transport")
 
-iht_type_options = ["Risk of Absolute Increase in ICP >= 20mmHg", "Escalation of ICP Category Compared to Pre-Transport ICP Category"]
+iht_type_options = ["Risk of Absolute Increase in ICP >= 20mmHg", "Risk of Escalation of ICP Category Compared to Pre-Transport ICP Category"]
 
 iht_type = st.segmented_control("Click One:", iht_type_options, selection_mode="single")
 
