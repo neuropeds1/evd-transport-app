@@ -58,9 +58,7 @@ if next == True:
     risk *= risk_iht
     risk *= risk_unscheduled
     risk *= 0.118
-    def round_to_2(y):
-      final_risk = float(format(y, ".2f"))
-    round_to_2(risk)
+    final_risk = round(risk,2)
     st.header(final_risk)
       
     
