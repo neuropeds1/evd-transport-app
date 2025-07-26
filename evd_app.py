@@ -80,9 +80,12 @@ if next == True:
     </div>
     """, unsafe_allow_html=True)
 
-    csv_file = "evd_transport_log.csv"
+    log_file = "icp_risk_log.csv"
+    file_exists = os.path.exists(log_file)
+    
     # Build dictionary of values
     data = {
+        "timestamp": datetime.now().isoformat(),
         "ICP_Category": icp,
         "Intubated": intubated,
         "IHT_Duration_Min": duration,
@@ -92,15 +95,12 @@ if next == True:
         "Risk": result
     }
 
-    # Convert to DataFrame and append to CSV
-    df = pd.DataFrame([data])
-
-    # Append or create new
-    if os.path.exists(csv_file):
-        df.to_csv(csv_file, mode='a', header=False, index=False)
-    else:
-        df.to_csv(csv_file, mode='w', header=True, index=False)
-
+    # Write row to CSV
+    with open(log_file, mode="a", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=log_data.keys())
+    if not file_exists:
+      writer.writeheader()
+    writer.writerow(log_data)
     
 st.divider()
 st.write("Calculator has NOT been prospectively evaluated. Please use it at your discretion.")
