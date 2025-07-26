@@ -1,9 +1,9 @@
 import streamlit as st
 import math
 
-st.title("Quality & Safety During Intra - Hospital Transport of Patients With a Clamped External Ventricular Drain")
+st.title("Quality & Safety During Intra - Hospital Transport (IHT) of Patients With a Clamped External Ventricular Drain")
 
-st.header("Calculating the Risk of Intracranial Pressure Elevation During Intra - Hospital Transport")
+st.header("Calculating the Risk of Intracranial Pressure (ICP) Elevation During Intra - Hospital Transport")
 
 iht_type_options = ["Risk of Absolute Increase in ICP >= 20mmHg"]
 
@@ -21,8 +21,10 @@ csf_drain = st.number_input("Hourly CSF drained (mL/h):", min_value=0.0, value=5
 
 IHT = st.segmented_control("Click One:", ["IHT for Therapeutic Procedure", "IHT for Diagnostic Procedure"], selection_mode="single")
 
-unscheduled = st.radio("Is the IHT Unscheduled", ["Yes", "No"], key="unscheduled")
+st.caption("Therapeutic Procedures include procedures in the operating room or the angiography suite")
+st.caption("Diagnostic Procedures are defined as transports to CT or MRI suites")
 
+unscheduled = st.radio("Is the IHT Unscheduled (Ex. Emergency Room)", ["Yes", "No"], key="unscheduled")
 
 next = st.button("Submit")
 
@@ -76,7 +78,11 @@ if next == True:
         Risk Category: {risk_label}
     </div>
     """, unsafe_allow_html=True)
-
+    st.caption("Calculator has NOT been prospectively evaluated. Please use it at your discretion.")
+    st.caption("Chaikittisilpa N, Lele AV, Lyons VH, Nair BG, Newman SF, Blissitt PA, Vavilala MS. Risks of Routinely Clamping External Ventricular Drains for Intrahospital Transport in Neurocritically Ill Cerebrovascular Patients. Neurocrit Care. 2017 Apr;26(2):196-204. doi: 10.1007/s12028-016-0308-0. PMID: 27757914.")
+    st.caption("Calculator developed by Aria Lele, Abhijit Lele")
+    st.caption("All RIGHTS RESERVED")
+    
       
     
     
