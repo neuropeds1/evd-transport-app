@@ -97,7 +97,7 @@ if next == True:
     }
 
     # Write row to CSV
-    with open(log_file, mode="a", newline="") as f:
+    with open("icp_risk_log.csv", mode="a", newline="", encoding = "utf-8") as f:
       writer = csv.DictWriter(f, fieldnames=log_data.keys())
     if not file_exists:
       writer.writeheader()
