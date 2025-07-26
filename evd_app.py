@@ -77,8 +77,9 @@ if next == True:
         Risk Category: {risk_label}
     </div>
     """, unsafe_allow_html=True)
+st.divider()
 st.caption("Calculator has NOT been prospectively evaluated. Please use it at your discretion.")
-st.caption("Chaikittisilpa N, Lele AV, Lyons VH, Nair BG, Newman SF, Blissitt PA, Vavilala MS. Risks of Routinely Clamping External Ventricular Drains for Intrahospital Transport in Neurocritically Ill Cerebrovascular Patients. Neurocrit Care. 2017 Apr;26(2):196-204. doi: 10.1007/s12028-016-0308-0. PMID: 27757914.")
+st.caption("Reference: Chaikittisilpa N, Lele AV, Lyons VH, Nair BG, Newman SF, Blissitt PA, Vavilala MS. Risks of Routinely Clamping External Ventricular Drains for Intrahospital Transport in Neurocritically Ill Cerebrovascular Patients. Neurocrit Care. 2017 Apr;26(2):196-204. doi: 10.1007/s12028-016-0308-0. PMID: 27757914.")
 st.caption("Calculator developed by Aria Lele, Abhijit Lele")
 st.caption("All RIGHTS RESERVED")
     
