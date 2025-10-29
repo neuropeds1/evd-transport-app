@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "target": "evd-webapp",
     "public": "out",
     "ignore": [
       "firebase.json",

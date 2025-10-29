@@ -20,14 +20,14 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Deploy to Firebase (target: evd-webapp)
+# Deploy to Firebase
 echo "🔥 Deploying to Firebase..."
-firebase deploy --only hosting:evd-webapp
+firebase deploy --only hosting
 
 # Check if deployment was successful
 if [ $? -eq 0 ]; then
     echo "✅ Deployment successful!"
-    echo "🌐 Your app is live at: https://evd-webapp--evd-app-d9406.web.app"
+    echo "🌐 Your app is live at: https://evd-app-d9406.web.app"
     echo "🔗 Check Firebase Console: https://console.firebase.google.com/project/evd-app-d9406/hosting"
 else
     echo "❌ Deployment failed! Please check the errors above."
