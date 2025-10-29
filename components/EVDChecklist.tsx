@@ -72,18 +72,18 @@ export default function EVDChecklist() {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold text-medical-blue mb-6">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors duration-200">
+      <h2 className="text-2xl font-bold text-medical-blue dark:text-blue-400 mb-6">
         EVD Management Checklist
       </h2>
 
-      <div className="mb-6 flex gap-2 border-b border-gray-200">
+      <div className="mb-6 flex gap-2 border-b border-gray-200 dark:border-gray-700">
         <button
           onClick={() => setActiveSection('or')}
           className={`px-6 py-3 font-semibold transition-all border-b-2 ${
             activeSection === 'or'
-              ? 'border-medical-blue text-medical-blue'
-              : 'border-transparent text-gray-500 hover:text-gray-700'
+              ? 'border-medical-blue dark:border-blue-400 text-medical-blue dark:text-blue-400'
+              : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
           }`}
         >
           OR Management Protocol
@@ -92,8 +92,8 @@ export default function EVDChecklist() {
           onClick={() => setActiveSection('anesthesia')}
           className={`px-6 py-3 font-semibold transition-all border-b-2 ${
             activeSection === 'anesthesia'
-              ? 'border-medical-blue text-medical-blue'
-              : 'border-transparent text-gray-500 hover:text-gray-700'
+              ? 'border-medical-blue dark:border-blue-400 text-medical-blue dark:text-blue-400'
+              : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
           }`}
         >
           Anesthesia Considerations
@@ -102,8 +102,8 @@ export default function EVDChecklist() {
           onClick={() => setActiveSection('notes')}
           className={`px-6 py-3 font-semibold transition-all border-b-2 ${
             activeSection === 'notes'
-              ? 'border-medical-blue text-medical-blue'
-              : 'border-transparent text-gray-500 hover:text-gray-700'
+              ? 'border-medical-blue dark:border-blue-400 text-medical-blue dark:text-blue-400'
+              : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
           }`}
         >
           Notes
@@ -113,9 +113,9 @@ export default function EVDChecklist() {
       {activeSection === 'or' && (
         <div>
           <div className="mb-4 flex items-center justify-between">
-            <h3 className="text-xl font-semibold text-gray-800">OR EVD Management Protocol</h3>
-            <div className="bg-blue-50 px-4 py-2 rounded-lg">
-              <span className="text-sm font-semibold text-medical-blue">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">OR EVD Management Protocol</h3>
+            <div className="bg-blue-50 dark:bg-blue-900 px-4 py-2 rounded-lg">
+              <span className="text-sm font-semibold text-medical-blue dark:text-blue-400">
                 {getCompletionPercentage(orChecklist)}% Complete
               </span>
             </div>
@@ -127,8 +127,8 @@ export default function EVDChecklist() {
                 key={item.id}
                 className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
                   item.checked
-                    ? 'bg-green-50 border-green-300'
-                    : 'bg-gray-50 border-gray-200 hover:border-gray-300'
+                    ? 'bg-green-50 dark:bg-green-900 border-green-300 dark:border-green-700'
+                    : 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
                 }`}
               >
                 <input
@@ -137,7 +137,7 @@ export default function EVDChecklist() {
                   onChange={() => toggleItem('or', item.id)}
                   className="mt-1 mr-3 w-5 h-5 cursor-pointer"
                 />
-                <span className={`flex-1 ${item.checked ? 'line-through text-gray-500' : 'text-gray-800'}`}>
+                <span className={`flex-1 ${item.checked ? 'line-through text-gray-500 dark:text-gray-400' : 'text-gray-800 dark:text-gray-200'}`}>
                   {item.title}
                 </span>
               </label>
@@ -151,9 +151,9 @@ export default function EVDChecklist() {
       {activeSection === 'anesthesia' && (
         <div>
           <div className="mb-4 flex items-center justify-between">
-            <h3 className="text-xl font-semibold text-gray-800">Anesthesia Considerations</h3>
-            <div className="bg-blue-50 px-4 py-2 rounded-lg">
-              <span className="text-sm font-semibold text-medical-blue">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Anesthesia Considerations</h3>
+            <div className="bg-blue-50 dark:bg-blue-900 px-4 py-2 rounded-lg">
+              <span className="text-sm font-semibold text-medical-blue dark:text-blue-400">
                 {getCompletionPercentage(anesthesiaChecklist)}% Complete
               </span>
             </div>
@@ -165,8 +165,8 @@ export default function EVDChecklist() {
                 key={item.id}
                 className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
                   item.checked
-                    ? 'bg-green-50 border-green-300'
-                    : 'bg-gray-50 border-gray-200 hover:border-gray-300'
+                    ? 'bg-green-50 dark:bg-green-900 border-green-300 dark:border-green-700'
+                    : 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
                 }`}
               >
                 <input
@@ -175,7 +175,7 @@ export default function EVDChecklist() {
                   onChange={() => toggleItem('anesthesia', item.id)}
                   className="mt-1 mr-3 w-5 h-5 cursor-pointer"
                 />
-                <span className={`flex-1 ${item.checked ? 'line-through text-gray-500' : 'text-gray-800'}`}>
+                <span className={`flex-1 ${item.checked ? 'line-through text-gray-500 dark:text-gray-400' : 'text-gray-800 dark:text-gray-200'}`}>
                   {item.title}
                 </span>
               </label>
@@ -188,12 +188,12 @@ export default function EVDChecklist() {
 
       {activeSection === 'notes' && (
         <div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">Clinical Notes</h3>
+          <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Clinical Notes</h3>
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Document EVD-related observations, ICP trends, drain outputs, complications, handoff information..."
-            className="w-full h-64 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-blue focus:border-transparent"
+            className="w-full h-64 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-medical-blue focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
           />
         </div>
       )}
@@ -201,7 +201,7 @@ export default function EVDChecklist() {
       <div className="mt-6 flex gap-4">
         <button
           onClick={clearAll}
-          className="px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-colors"
+          className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
         >
           Clear All
         </button>
@@ -235,9 +235,9 @@ function QuickReference({ section }: { section: 'or' | 'anesthesia' }) {
   ]
 
   return (
-    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-      <h4 className="font-semibold text-medical-blue mb-2">Quick Reference Tips:</h4>
-      <ul className="space-y-1 text-sm text-gray-700">
+    <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+      <h4 className="font-semibold text-medical-blue dark:text-blue-400 mb-2">Quick Reference Tips:</h4>
+      <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
         {(section === 'or' ? orTips : anesthesiaTips).map((tip, idx) => (
           <li key={idx}>{tip}</li>
         ))}

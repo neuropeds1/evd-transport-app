@@ -63,14 +63,20 @@ export default function ICPRiskCalculator() {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold text-medical-blue mb-6">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors duration-200">
+      <div className="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-6 transition-colors duration-200">
+        <p className="text-sm text-yellow-800 dark:text-yellow-200 font-semibold">
+          ⚠️ Calculator has NOT been prospectively evaluated. Please use it at your discretion.
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-medical-blue dark:text-blue-400 mb-6">
         Calculating the Risk of Intracranial Pressure (ICP) Elevation During Intra-Hospital Transport
       </h2>
 
       <div className="space-y-6">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             Pre-IHT ICP category:
           </label>
           <div className="flex gap-4">
@@ -84,14 +90,14 @@ export default function ICPRiskCalculator() {
                   onChange={(e) => setFormData({ ...formData, icp: e.target.value })}
                   className="mr-2"
                 />
-                <span className="text-gray-700">{option}</span>
+                <span className="text-gray-700 dark:text-gray-300">{option}</span>
               </label>
             ))}
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             Is the patient intubated?
           </label>
           <div className="flex gap-4">
@@ -105,14 +111,14 @@ export default function ICPRiskCalculator() {
                   onChange={(e) => setFormData({ ...formData, intubated: e.target.value })}
                   className="mr-2"
                 />
-                <span className="text-gray-700">{option}</span>
+                <span className="text-gray-700 dark:text-gray-300">{option}</span>
               </label>
             ))}
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             Duration of IHT (minutes): {formData.duration}
           </label>
           <input
@@ -126,7 +132,7 @@ export default function ICPRiskCalculator() {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             Days since ICU admission: {formData.days}
           </label>
           <input
@@ -140,17 +146,17 @@ export default function ICPRiskCalculator() {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             Hourly CSF drained (mL/h):
           </label>
-          <input
-            type="number"
-            min="0"
-            step="0.1"
-            value={formData.csf}
-            onChange={(e) => setFormData({ ...formData, csf: parseFloat(e.target.value) })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-medical-blue focus:border-transparent"
-          />
+            <input
+              type="number"
+              min="0"
+              step="0.1"
+              value={formData.csf}
+              onChange={(e) => setFormData({ ...formData, csf: parseFloat(e.target.value) })}
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-medical-blue focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+            />
         </div>
 
         <div>
@@ -159,7 +165,7 @@ export default function ICPRiskCalculator() {
           </label>
           <div className="grid grid-cols-2 gap-4">
             {['IHT for Therapeutic Procedure', 'IHT for Diagnostic Procedure'].map((option) => (
-              <label key={option} className="flex items-center p-3 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50">
+              <label key={option} className="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-md cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 bg-white dark:bg-gray-700">
                 <input
                   type="radio"
                   name="iht"
@@ -168,18 +174,18 @@ export default function ICPRiskCalculator() {
                   onChange={(e) => setFormData({ ...formData, iht: e.target.value })}
                   className="mr-2"
                 />
-                <span className="text-sm text-gray-700">{option}</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">{option}</span>
               </label>
             ))}
           </div>
-          <p className="text-xs text-gray-500 mt-2">
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
             (Therapeutic procedures include procedures in the operating room or the angiography suite. 
             Diagnostic procedures are defined as transports to CT or MRI suites).
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             Is the IHT Unscheduled? (Ex. Emergency Transport)
           </label>
           <div className="flex gap-4">
@@ -193,7 +199,7 @@ export default function ICPRiskCalculator() {
                   onChange={(e) => setFormData({ ...formData, unscheduled: e.target.value })}
                   className="mr-2"
                 />
-                <span className="text-gray-700">{option}</span>
+                <span className="text-gray-700 dark:text-gray-300">{option}</span>
               </label>
             ))}
           </div>
