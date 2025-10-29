@@ -10,6 +10,7 @@
 2. **Firebase Project Created**
    - Project ID: `evd-app-d9406`
    - Project Number: `150518486003`
+   - Web App: `evd-webapp`
 
 ## 🔧 Configuration Files Created
 
@@ -38,7 +39,7 @@ npm run build
 
 ### Step 3: Deploy to Firebase
 ```bash
-firebase deploy --only hosting
+firebase deploy --only hosting:evd-webapp
 ```
 
 ### Alternative: Use the Deploy Script
@@ -56,8 +57,8 @@ npm run deploy
 
 After successful deployment, your app will be available at:
 
-- **Primary URL:** `https://evd-app-d9406.web.app`
-- **Secondary URL:** `https://evd-app-d9406.firebaseapp.com`
+- **Primary URL:** `https://evd-webapp--evd-app-d9406.web.app`
+- **Firebase Console:** `https://console.firebase.google.com/project/evd-app-d9406/hosting`
 
 ## 🔍 Verify Deployment
 

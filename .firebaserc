@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "evd-app-d9406"
+  },
+  "targets": {
+    "evd-app-d9406": {
+      "hosting": {
+        "evd-webapp": [
+          "evd-webapp"
+        ]
+      }
+    }
   }
 }
