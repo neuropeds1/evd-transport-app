@@ -9,9 +9,13 @@ Patients with External Ventricular Drains (EVDs) present unique challenges to an
 ### 1. Pre-Induction Planning
 
 **EVD Status Evaluation:**
-- Evaluate the EVD status before anesthesia
-- Determine if it's currently open and draining, or clamped
-- Review patient's ICP trend
+- Evaluate the status of the EVD as part of the preanesthesia evaluation
+- Determine if EVD is currently open and draining, or clamped
+- Record the setting of the EVD (i.e., +20 cmH20)
+- Review the patient's ICP trend over the last 24 hours
+- Review the patient's hourly CSF output over the last 24 hours
+- Review any issues with EVD clamping with the ICU nurse
+- Evaluate the ICP waveform with the EVD clamped to CSF drainage
 
 **Rationale:** 
 Knowing this informs your induction strategy. For instance:
@@ -20,13 +24,13 @@ Knowing this informs your induction strategy. For instance:
 - Be prepared to manage a surge in ICP
 
 **Essential Preparations:**
-- Ensure a proper baseline neuro exam is done if possible
+- Ensure a proper baseline neuro exam is done, including level of consciousness, any focal sensory or motor deficit, and pupillary examination
 - Review all EVD data:
   - Recent outputs
   - ICP values
   - CSF appearance
 - Have a plan with neurosurgery for how the EVD will be managed during induction
-- Sometimes neurosurgery might temporarily open the EVD if safe, to allow drainage while the patient is manipulated
+- Sometimes, neurosurgery might temporarily open the EVD if safe, to allow drainage while the patient is manipulated
 
 ### 2. Intracranial Dynamics During Induction
 
@@ -34,19 +38,18 @@ Knowing this informs your induction strategy. For instance:
 Avoid factors that dramatically increase ICP during induction:
 
 **a) Smooth Induction**
-- Perform smooth, relatively deep induction
+- Perform smooth titration of an anesthetic to achieve the appropriate depth
 - Prevent coughing or bucking on the endotracheal tube
 - Coughing/bucking can sharply raise ICP
 
 **b) Mitigate Pressor Response**
-- Use lidocaine IV or intratracheal
-- Consider opioids or other blunting agents
-- Reduces the pressor response to intubation
+- Use lidocaine IV (1.5 mg/kg) 90 seconds before laryngoscopy
+- Consider opioids
 
 **c) Blood Pressure Management**
-- Avoid significant hypertension during laryngoscopy
+- Avoid significant hypertension during laryngoscopy and maintain stable cerebral perfusion pressure
 - Treat blood pressure spikes promptly
-- Hypertension can increase cerebral blood volume and ICP
+- Hypertension can widen the transmural pressure gradient and may predispose to rebleeding of an already ruptured intracerebral aneurysm
 
 **d) Ventilation Strategy**
 - Some anesthesiologists will mildly hyperventilate the patient after induction
@@ -55,7 +58,7 @@ Avoid factors that dramatically increase ICP during induction:
 - Acts as a bridge until other measures are in place
 
 **Important Note:** 
-"Maintain PaCO₂ in low-normal range (e.g. 35 mmHg) if ICP is a concern, but avoid excessive hyperventilation which may reduce cerebral perfusion."
+"Maintain PaCO₂ in low-normal range (e.g., 35 mmHg) if ICP is a concern, but avoid excessive hyperventilation, which may reduce cerebral perfusion."
 
 ### 3. Positioning and Ventilation
 
@@ -67,7 +70,7 @@ Avoid factors that dramatically increase ICP during induction:
 
 **Special Considerations:**
 - If surgical position mandates something different, work with surgeons
-- If patient must be flat or in Trendelenburg:
+- If the patient must be flat or in Trendelenburg:
   - Recognize the ICP implications
   - Prepare accordingly (maybe have the EVD open or increase drainage frequency)
 - Avoid any neck taping or positioning that compresses the jugular veins
