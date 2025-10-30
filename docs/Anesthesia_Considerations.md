@@ -1,5 +1,52 @@
 # Anesthesia Considerations for EVD Management
 
+**Perioperative Checklist for Patients With External Ventricular Drain**
+**Preoperative assessment**
+-Obtain baseline neurological examination
+-Review EVD (cm H2O) setting
+-Review hourly CSF output to obtain baseline
+-Review baseline ICP mm Hg, ICP trends, and available multimodal monitoring data
+-Review baseline CSF color and consistency
+-Review EVD clamp trials data if available
+-Review the coagulation profile
+-Review the antibiotic plan if anticipating a new EVD/LD insertion in the operating room
+-Provide EVD and LD details during preoperative handoff between intensive care/ward providers and the anesthesia providers
+
+**Transporting patients with EVD**
+-Confirm decision to travel with EVD clamp vs. open
+-If traveling with an EVD clamp, ensure clamping at the distal port on the CSF collecting system
+-Maintain head of bed status as in the ICU
+-Confirm availability of a dedicated intravenous pole for EVD mount
+-Confirm leveling EVD at the external auditory meatus
+-Enable ICP monitoring during transport
+-Confirm availability of medications needed to treat intracranial hypertension during transport
+
+**Intraoperative management of indwelling drains**
+-Prepare the transducer cable
+-Identify EVD tubing by appropriate unique labeling
+-Confirm HOB status during the surgical procedure
+-Confirm the leveling of EVD at the external auditory meatus
+-Obtain the ICP waveform and baseline ICP value
+-Record q 1-h EVD setting
+-Record at least q 1-h ICP values (recorded with EVD closed to drain)
+-Record at least q 1-h EVD drain output (expressed in mL)
+-Provide EVD details during intraoperative handoffs between anesthesia providers
+
+**Inform the surgeon if any Z1 of the following**
+-Sudden decline in CSF drainage or no drainage from EVD, or occlusion of EVD
+-If the drain output is >15-20 mL at any time or in any given hour
+-Sudden change in CSF color (for example, bright red color may indicate bleeding from a ruptured aneurysm)
+-Dampening or loss of the ICP waveform
+
+
+
+
+
+
+
+
+
+
 ## Overview
 
 Patients with External Ventricular Drains (EVDs) present unique challenges to anesthesiologists. This document provides anesthesia-specific considerations for both ICU and OR settings, serving as a handy guide for trainees and practitioners.
