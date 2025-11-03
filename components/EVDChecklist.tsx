@@ -28,22 +28,42 @@ export default function EVDChecklist() {
   ])
 
   const [anesthesiaChecklist, setAnesthesiaChecklist] = useState<ChecklistItem[]>([
-    { id: 'pre-eval-status', title: 'Evaluate EVD status and ICP trend before induction', checked: false },
-    { id: 'baseline-neuro-exam', title: 'Ensure proper baseline neuro exam completed', checked: false },
-    { id: 'review-evd-data', title: 'Review recent EVD outputs, ICP values, CSF appearance', checked: false },
-    { id: 'plan-induction', title: 'Coordinate EVD management plan with neurosurgery for induction', checked: false },
-    { id: 'smooth-induction', title: 'Perform smooth, deep induction to prevent coughing/bucking', checked: false },
-    { id: 'manage-blood-pressure', title: 'Treat blood pressure spikes promptly during intubation', checked: false },
-    { id: 'ventilation-strategy', title: 'Maintain PaCO₂ in low-normal range (30-35 mmHg) if ICP concern', checked: false },
-    { id: 'head-positioning', title: 'Keep head neutral and elevated ~30° if possible', checked: false },
-    { id: 'monitor-peep', title: 'Use lowest PEEP necessary for oxygenation', checked: false },
-    { id: 'continuous-vs-intermittent', title: 'Decide on continuous vs intermittent EVD management', checked: false },
-    { id: 'document-changes', title: 'Document all EVD changes (time clamped/unclamped)', checked: false },
-    { id: 'anticoagulation-status', title: 'Verify coagulation parameters acceptable', checked: false },
-    { id: 'sah-aneurysm-awareness', title: 'If SAH with unsecured aneurysm: avoid excessive drainage', checked: false },
-    { id: 'emergence-planning', title: 'Plan smooth emergence (consider deep extubation)', checked: false },
-    { id: 'transfer-arrangements', title: 'Ensure EVD correctly managed during ICU transfer', checked: false },
-    { id: 'dvt-prophylaxis', title: 'Hold DVT prophylaxis around EVD removal (4hr before/after)', checked: false },
+    // Preoperative Assessment
+    { id: 'baseline-neuro-exam', title: 'Obtain baseline neurological examination', checked: false },
+    { id: 'review-evd-setting', title: 'Review EVD (cm H₂O) setting', checked: false },
+    { id: 'review-csf-output', title: 'Review hourly CSF output to obtain baseline', checked: false },
+    { id: 'review-icp-trends', title: 'Review baseline ICP mm Hg, ICP trends, and available multimodal monitoring data', checked: false },
+    { id: 'review-csf-appearance', title: 'Review baseline CSF color and consistency', checked: false },
+    { id: 'review-clamp-trials', title: 'Review EVD clamp trials data if available', checked: false },
+    { id: 'review-coagulation', title: 'Review the coagulation profile', checked: false },
+    { id: 'review-antibiotic-plan', title: 'Review the antibiotic plan if anticipating a new EVD/LD insertion in the operating room', checked: false },
+    { id: 'preop-handoff', title: 'Provide EVD and LD details during preoperative handoff between intensive care/ward providers and the anesthesia providers', checked: false },
+    
+    // Transporting Patients with EVD
+    { id: 'transport-clamp-decision', title: 'Confirm decision to travel with EVD clamp vs. open', checked: false },
+    { id: 'transport-clamp-location', title: 'If traveling with an EVD clamp, ensure clamping at the distal port on the CSF collecting system', checked: false },
+    { id: 'transport-hob', title: 'Maintain head of bed status as in the ICU', checked: false },
+    { id: 'transport-iv-pole', title: 'Confirm availability of a dedicated intravenous pole for EVD mount', checked: false },
+    { id: 'transport-leveling', title: 'Confirm leveling EVD at the external auditory meatus', checked: false },
+    { id: 'transport-icp-monitoring', title: 'Enable ICP monitoring during transport', checked: false },
+    { id: 'transport-medications', title: 'Confirm availability of medications needed to treat intracranial hypertension during transport', checked: false },
+    
+    // Intraoperative Management of Indwelling Drains
+    { id: 'intraop-transducer', title: 'Prepare the transducer cable', checked: false },
+    { id: 'intraop-label', title: 'Identify EVD tubing by appropriate unique labeling', checked: false },
+    { id: 'intraop-hob', title: 'Confirm HOB status during the surgical procedure', checked: false },
+    { id: 'intraop-leveling', title: 'Confirm the leveling of EVD at the external auditory meatus', checked: false },
+    { id: 'intraop-icp-baseline', title: 'Obtain the ICP waveform and baseline ICP value', checked: false },
+    { id: 'intraop-record-setting', title: 'Record q 1-h EVD setting', checked: false },
+    { id: 'intraop-record-icp', title: 'Record at least q 1-h ICP values (recorded with EVD closed to drain)', checked: false },
+    { id: 'intraop-record-output', title: 'Record at least q 1-h EVD drain output (expressed in mL)', checked: false },
+    { id: 'intraop-handoff', title: 'Provide EVD details during intraoperative handoffs between anesthesia providers', checked: false },
+    
+    // Inform the Surgeon Criteria
+    { id: 'inform-drainage-decline', title: 'Inform surgeon: Sudden decline in CSF drainage or no drainage from EVD, or occlusion of EVD', checked: false },
+    { id: 'inform-high-output', title: 'Inform surgeon: If the drain output is >15-20 mL at any time or in any given hour', checked: false },
+    { id: 'inform-csf-color-change', title: 'Inform surgeon: Sudden change in CSF color (e.g., bright red color may indicate bleeding from a ruptured aneurysm)', checked: false },
+    { id: 'inform-waveform-loss', title: 'Inform surgeon: Dampening or loss of the ICP waveform', checked: false },
   ])
 
   const [notes, setNotes] = useState('')
@@ -226,11 +246,13 @@ function QuickReference({ section }: { section: 'or' | 'anesthesia' }) {
   ]
 
   const anesthesiaTips = [
-    '• Smooth induction to prevent ICP spikes from coughing/bucking',
-    '• Use lidocaine IV or intratracheal to blunt pressor response',
-    '• Maintain low-normal PaCO₂ (30-35 mmHg) if ICP concern',
-    '• Avoid high PEEP; keep head elevated ~30° if possible',
-    '• For SAH with unsecured aneurysm: maintain higher EVD threshold (15-20 cmH₂O)',
+    '• Complete preoperative assessment: baseline neuro exam, EVD setting, ICP trends, CSF output/appearance',
+    '• Transport: Confirm clamp vs. open decision, maintain HOB status, level at external auditory meatus',
+    '• Intraoperative: Record q 1-h EVD setting, ICP values (with EVD closed), and drain output (mL)',
+    '• Immediately inform surgeon if: sudden drainage decline, >15-20 mL/hr output, CSF color change, or ICP waveform loss',
+    '• Smooth induction with lidocaine IV (1.5 mg/kg) 90 sec before laryngoscopy to prevent ICP spikes',
+    '• Maintain PaCO₂ 30-35 mmHg if ICP concern; avoid high PEEP; keep head neutral and elevated ~30°',
+    '• SAH with unsecured aneurysm: maintain higher EVD threshold (15-20 cmH₂O) to reduce rebleed risk',
     '• Hold DVT prophylaxis 4 hours before/after EVD removal',
   ]
 
