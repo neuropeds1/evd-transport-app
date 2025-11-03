@@ -90,100 +90,188 @@ function EducationSection() {
 function AnatomyContent() {
   return (
     <div className="prose prose-invert max-w-none">
-      <div className="space-y-6 text-gray-800 dark:text-gray-200">
+      <div className="space-y-8 text-gray-800 dark:text-gray-200">
+        
+        {/* Ventricular System Overview */}
         <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">Ventricular System Overview</h3>
-          <p className="mb-4">
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">Ventricular System Overview</h3>
+          <p className="mb-5">
             The ventricular system is an interconnected series of cavities within the brain filled with cerebrospinal fluid (CSF). 
             This system consists of four main ventricles that communicate with each other and with the subarachnoid space.
           </p>
-          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-4">
-            <p className="font-semibold mb-3 text-medical-blue dark:text-blue-400">The Four Ventricles:</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Lateral ventricles</strong> (right and left) - C-shaped cavities within each cerebral hemisphere (capacity: 7-10 mL each)</li>
-              <li><strong>Third ventricle</strong> - Midline structure in the diencephalon, between the thalami</li>
-              <li><strong>Fourth ventricle</strong> - Located in the hindbrain, between the brainstem and cerebellum</li>
-              <li><strong>Central canal</strong> - Continuous with the fourth ventricle, extending through the spinal cord</li>
-            </ul>
-          </div>
-          <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-            <p className="text-sm">
-              <strong>Clinical Note:</strong> Lateral ventricular asymmetry occurs in 5-12% of the population and is generally a normal variant.
-            </p>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-blue-50 dark:bg-blue-900 border-l-4 border-blue-500 dark:border-blue-600 rounded-lg p-4">
+              <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-3">Lateral Ventricles</h4>
+              <p className="text-sm mb-2">C-shaped cavities within each cerebral hemisphere</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
+                <strong>Capacity:</strong> 7-10 mL each<br/>
+                <strong>Location:</strong> Right and left hemispheres
+              </p>
+            </div>
+            
+            <div className="bg-green-50 dark:bg-green-900 border-l-4 border-green-500 dark:border-green-600 rounded-lg p-4">
+              <h4 className="font-semibold text-green-700 dark:text-green-300 mb-3">Third Ventricle</h4>
+              <p className="text-sm mb-2">Midline structure in the diencephalon</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
+                <strong>Location:</strong> Between the thalami<br/>
+                <strong>Shape:</strong> Slit-like configuration
+              </p>
+            </div>
+            
+            <div className="bg-purple-50 dark:bg-purple-900 border-l-4 border-purple-500 dark:border-purple-600 rounded-lg p-4">
+              <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-3">Fourth Ventricle</h4>
+              <p className="text-sm mb-2">Located in the hindbrain</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
+                <strong>Location:</strong> Between brainstem and cerebellum<br/>
+                <strong>Exits:</strong> Foramina of Luschka and Magendie
+              </p>
+            </div>
+            
+            <div className="bg-orange-50 dark:bg-orange-900 border-l-4 border-orange-500 dark:border-orange-600 rounded-lg p-4">
+              <h4 className="font-semibold text-orange-700 dark:text-orange-300 mb-3">Central Canal</h4>
+              <p className="text-sm mb-2">Extends through the spinal cord</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
+                <strong>Connection:</strong> Continuous with fourth ventricle<br/>
+                <strong>Function:</strong> CSF circulation to spinal cord
+              </p>
+            </div>
           </div>
         </section>
 
+        {/* CSF Flow Pathway */}
         <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">CSF Flow Pathway</h3>
-          <p className="mb-4">
-            CSF circulates through a specific pathway from production to reabsorption:
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">CSF Flow Pathway</h3>
+          <p className="mb-5">
+            CSF circulates through a specific pathway from production to reabsorption. Understanding this flow is essential 
+            for comprehending EVD function and placement.
           </p>
           
-          <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-4">
-            <p className="font-semibold mb-3">Production:</p>
-            <ul className="list-disc pl-6 space-y-2 text-sm">
-              <li>CSF is produced by the <strong>choroid plexus</strong> - specialized ependymal cells with a rich capillary network</li>
-              <li>Production rate: <strong>~20-25 mL/hour</strong> (approximately 500 mL/day)</li>
-              <li>Total CSF volume in the system: <strong>~150 mL</strong></li>
-              <li>The entire CSF volume is replaced approximately 3-4 times daily</li>
-            </ul>
+          <div className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900 dark:to-green-900 rounded-lg p-5 mb-5">
+            <h4 className="font-semibold text-medical-blue dark:text-blue-300 mb-4">Complete Circulation Route:</h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="bg-blue-600 dark:bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                <div className="flex-1">
+                  <p className="font-semibold mb-1">Production in Choroid Plexus</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    CSF is produced by specialized ependymal cells in the <strong>choroid plexus</strong> within the ventricles 
+                    (~20 mL/hour, ~500 mL/day)
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="bg-blue-600 dark:bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                <div className="flex-1">
+                  <p className="font-semibold mb-1">Lateral Ventricles → Third Ventricle</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    CSF flows through <strong>interventricular foramina (foramina of Monro)</strong>
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="bg-blue-600 dark:bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                <div className="flex-1">
+                  <p className="font-semibold mb-1">Third Ventricle → Fourth Ventricle</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    CSF passes via <strong>cerebral aqueduct (aqueduct of Sylvius)</strong>
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="bg-blue-600 dark:bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">4</div>
+                <div className="flex-1">
+                  <p className="font-semibold mb-1">Fourth Ventricle → Subarachnoid Space</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    CSF exits via lateral apertures (<strong>foramina of Luschka</strong>) and median aperture (<strong>foramen of Magendie</strong>)
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="bg-green-600 dark:bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">5</div>
+                <div className="flex-1">
+                  <p className="font-semibold mb-1">Reabsorption into Venous System</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    CSF is reabsorbed via <strong>arachnoid granulations</strong> near the apex of the skull into the superior sagittal sinus
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
-            <p className="font-semibold mb-3">Circulation Route:</p>
-            <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Lateral ventricles</strong> → through <strong>interventricular foramina (foramina of Monro)</strong> → <strong>third ventricle</strong></li>
-              <li><strong>Third ventricle</strong> → via <strong>cerebral aqueduct (aqueduct of Sylvius)</strong> → <strong>fourth ventricle</strong></li>
-              <li><strong>Fourth ventricle</strong> → via lateral apertures (<strong>foramina of Luschka</strong>) and median aperture (<strong>foramen of Magendie</strong>) → <strong>subarachnoid space</strong></li>
-              <li><strong>Subarachnoid space</strong> → reabsorbed via <strong>arachnoid granulations</strong> into the venous system (superior sagittal sinus)</li>
-            </ol>
-          </div>
-        </section>
-
-        <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">EVD Placement: Anatomical Considerations</h3>
           
-          <div className="mb-4">
-            <h4 className="font-semibold text-medical-blue dark:text-blue-400 mb-2">Typical EVD Catheter Position:</h4>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>The catheter tip is typically placed in the <strong>frontal horn of the lateral ventricle</strong>, near the <strong>foramen of Monro</strong></li>
-              <li>This location provides optimal drainage and ICP monitoring</li>
-              <li>The foramen of Monro connects the lateral ventricle to the third ventricle, making it a strategic point for CSF drainage</li>
+          <div className="bg-blue-50 dark:bg-blue-900 rounded-lg p-4 text-sm">
+            <p className="font-semibold mb-2">Key Facts:</p>
+            <ul className="space-y-1 list-disc list-inside">
+              <li>Total CSF volume: <strong>~150 mL</strong></li>
+              <li>Production rate: <strong>~20 mL/hour</strong></li>
+              <li>Entire volume replaced <strong>3-4 times daily</strong></li>
             </ul>
-          </div>
-
-          <div className="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-4">
-            <p className="font-semibold mb-2">Leveling Reference Point:</p>
-            <ul className="list-disc pl-6 space-y-2 text-sm">
-              <li>EVDs are leveled at the <strong>external auditory meatus (tragus)</strong></li>
-              <li>This anatomical landmark approximates the height of the <strong>foramen of Monro</strong> and the ventricular system</li>
-              <li>Proper leveling ensures that drainage occurs only when ICP exceeds the set threshold</li>
-              <li>If the drain is positioned below this level, excessive drainage may occur; if above, inadequate drainage results</li>
-            </ul>
-          </div>
-
-          <div className="bg-blue-50 dark:bg-blue-900 border-l-4 border-blue-400 dark:border-blue-600 p-4">
-            <p className="font-semibold mb-2">💡 Why the Tragus?</p>
-            <p className="text-sm">
-              The external auditory meatus lies at approximately the same horizontal plane as the foramen of Monro when the patient 
-              is supine with the head in a neutral position. This makes it a reliable external landmark for calibrating the drainage 
-              system to the actual intraventricular pressure.
-            </p>
           </div>
         </section>
 
+        {/* EVD Placement */}
         <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">Clinical Relevance to EVD Management</h3>
-          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-            <p className="mb-3">Understanding ventricular anatomy explains several key EVD management principles:</p>
-            <ol className="list-decimal pl-6 space-y-2 text-sm">
-              <li><strong>Obstruction Sites:</strong> Blockages can occur at narrow passages (foramina of Monro, aqueduct of Sylvius), leading to hydrocephalus</li>
-              <li><strong>Drainage Dynamics:</strong> The siphon effect of an EVD works because the catheter creates a direct connection from the lateral ventricle to an external collection system</li>
-              <li><strong>Position-Dependent Drainage:</strong> Changes in patient position alter the hydrostatic pressure gradient between the ventricles and the drainage chamber, which is why clamping during repositioning is critical</li>
-              <li><strong>Bilateral vs Unilateral Pathology:</strong> The two lateral ventricles are separate; pathology may affect them asymmetrically</li>
-            </ol>
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">EVD Placement: Anatomical Considerations</h3>
+          
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900 dark:to-orange-900 rounded-lg p-5 mb-5">
+            <h4 className="font-semibold text-orange-700 dark:text-orange-300 mb-4">Typical EVD Catheter Position</h4>
+            <div className="space-y-3 text-sm">
+              <p>
+                The catheter tip is typically placed in the <strong>frontal horn of the lateral ventricle</strong>, 
+                near the <strong>foramen of Monro</strong>.
+              </p>
+              <div className="bg-white dark:bg-gray-800 rounded p-3">
+                <p className="font-semibold mb-2">Why This Location?</p>
+                <ul className="space-y-1 list-disc list-inside text-xs">
+                  <li>Provides optimal drainage and ICP monitoring</li>
+                  <li>Strategic point connecting lateral and third ventricles</li>
+                  <li>Accessible via frontal approach</li>
+                  <li>Minimizes risk of injury to critical structures</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 dark:bg-blue-900 rounded-lg p-5">
+            <h4 className="font-semibold text-medical-blue dark:text-blue-300 mb-4">Leveling Reference Point</h4>
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded p-4">
+                <p className="font-semibold mb-2 text-medical-blue dark:text-blue-400">External Landmark</p>
+                <p className="text-2xl font-bold text-medical-blue dark:text-blue-400 mb-1">Tragus</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">(External Auditory Meatus)</p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 rounded p-4">
+                <p className="font-semibold mb-2 text-medical-blue dark:text-blue-400">Internal Landmark</p>
+                <p className="text-2xl font-bold text-medical-blue dark:text-blue-400 mb-1">Foramen of Monro</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">(Ventricular System Height)</p>
+              </div>
+            </div>
+            
+            <div className="bg-yellow-100 dark:bg-yellow-900 rounded p-4 text-sm">
+              <p className="font-semibold mb-2">💡 Clinical Pearl:</p>
+              <p className="mb-3">
+                The external auditory meatus lies at approximately the same horizontal plane as the foramen of Monro 
+                when the patient is supine with the head in neutral position.
+              </p>
+              <div className="border-t border-yellow-300 dark:border-yellow-700 pt-3 mt-3">
+                <p className="font-semibold mb-1">Leveling Consequences:</p>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <span className="font-semibold">Below level:</span> Excessive drainage
+                  </div>
+                  <div>
+                    <span className="font-semibold">Above level:</span> Inadequate drainage
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
+
       </div>
     </div>
   )
@@ -192,66 +280,213 @@ function AnatomyContent() {
 function PhysiologyContent() {
   return (
     <div className="prose prose-invert max-w-none">
-      <div className="space-y-6 text-gray-800 dark:text-gray-200">
+      <div className="space-y-8 text-gray-800 dark:text-gray-200">
+        
+        {/* Monro-Kellie Doctrine */}
         <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">CSF Production & Circulation</h3>
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">Monro-Kellie Doctrine</h3>
+          <p className="mb-4">
+            The skull is a rigid, fixed-volume container. The Monro-Kellie doctrine states that the total volume within 
+            the skull must remain constant, representing the fundamental principle of <strong>conservation of volume</strong>.
+          </p>
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-lg p-5 mb-4">
+            <p className="font-semibold mb-3 text-medical-blue dark:text-blue-300">Intracranial Volume Components:</p>
+            <div className="grid grid-cols-3 gap-4 mb-4">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-medical-blue dark:text-blue-400">~80%</p>
+                <p className="text-sm font-semibold">Brain Tissue</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-medical-blue dark:text-blue-400">~10%</p>
+                <p className="text-sm font-semibold">Blood Volume</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-medical-blue dark:text-blue-400">~10%</p>
+                <p className="text-sm font-semibold">CSF</p>
+              </div>
+            </div>
+            <p className="text-sm italic border-t border-blue-300 dark:border-blue-600 pt-3">
+              Any increase in one component must be offset by a decrease in another, or intracranial pressure will rise.
+            </p>
+          </div>
+          <p className="text-sm">
+            Initial compensation occurs through displacement of blood from venous sinuses and CSF out of the skull. 
+            An EVD exploits this principle by removing CSF to reduce pressure when brain tissue swelling or blood volume increases.
+          </p>
+        </section>
+
+        {/* Brain Compliance Curve */}
+        <section>
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">Brain Compliance Curve</h3>
+          <p className="mb-4">
+            The relationship between intracranial volume and pressure is <strong>non-linear</strong>, following a compliance curve 
+            with two distinct phases:
+          </p>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
-            <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-              <h4 className="font-semibold mb-2">Production Rate</h4>
-              <p className="text-2xl font-bold text-medical-blue dark:text-blue-400">~20-25 mL/hour</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">≈ 500 mL/day</p>
+            <div className="bg-green-50 dark:bg-green-900 border-l-4 border-green-500 dark:border-green-600 p-4 rounded">
+              <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2">Compensatory Phase</h4>
+              <p className="text-sm">
+                Initially, volume changes cause relatively little pressure increase due to displacement of venous blood and CSF. 
+                The brain can accommodate moderate increases in volume.
+              </p>
             </div>
-            <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg p-4">
-              <h4 className="font-semibold mb-2">Total CSF Volume</h4>
-              <p className="text-2xl font-bold text-medical-green dark:text-green-400">~150 mL</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">in the system</p>
+            <div className="bg-red-50 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-600 p-4 rounded">
+              <h4 className="font-semibold text-red-700 dark:text-red-400 mb-2">Decompensated Phase</h4>
+              <p className="text-sm">
+                Beyond a critical point, compensatory mechanisms are exhausted. Small volume increases cause 
+                <strong> large, rapid pressure rises</strong>. This is the danger zone.
+              </p>
             </div>
           </div>
-          <p>
-            CSF is produced by the <strong>choroid plexus</strong> in the ventricles and reabsorbed into the bloodstream 
-            via <strong>arachnoid granulations</strong> in the superior sagittal sinus. This continual turnover means 
-            an EVD can significantly alter intracranial dynamics by removing CSF faster than it's produced.
+          <div className="bg-yellow-50 dark:bg-yellow-900 border border-yellow-300 dark:border-yellow-700 rounded-lg p-4">
+            <p className="text-sm">
+              <strong>Clinical Significance:</strong> Relatively small shifts in intracranial volume may cause large differences 
+              in ICP, especially in younger patients with no cerebral atrophy (steeper compliance curve with less room to accommodate swelling).
+            </p>
+          </div>
+        </section>
+
+        {/* CSF Production & Circulation */}
+        <section>
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">CSF Production & Circulation</h3>
+          <p className="mb-4">
+            CSF is synthesized by the <strong>choroid plexus</strong> within the cerebral ventricles at a surprisingly high rate. 
+            It circulates through the ventricular system, wraps around through the subarachnoid space, and is reabsorbed by 
+            <strong> arachnoid granulations</strong> near the apex of the skull.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4 text-center">
+              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2">Production Rate</p>
+              <p className="text-3xl font-bold text-medical-blue dark:text-blue-400">~20 mL/hr</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">≈ 500 mL/day</p>
+            </div>
+            <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg p-4 text-center">
+              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2">Total CSF Volume</p>
+              <p className="text-3xl font-bold text-medical-green dark:text-green-400">~150 mL</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">in the system</p>
+            </div>
+            <div className="bg-purple-50 dark:bg-purple-900 border border-purple-200 dark:border-purple-800 rounded-lg p-4 text-center">
+              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2">Turnover Rate</p>
+              <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">3-4×</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">per day</p>
+            </div>
+          </div>
+          <p className="text-sm">
+            This continual high-volume turnover means an EVD can significantly alter intracranial dynamics by removing 
+            CSF faster than it's produced, which is why drainage settings and monitoring are critical.
           </p>
         </section>
 
+        {/* ICP Norms & Cerebral Perfusion Pressure */}
         <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">Monro-Kellie Doctrine</h3>
-          <div className="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-4 mb-4">
-            <p className="font-semibold mb-2">Fundamental Principle:</p>
-            <p className="mb-3">
-              The skull is a rigid box containing three components: <strong>brain tissue</strong>, <strong>blood</strong>, 
-              and <strong>CSF</strong>.
-            </p>
-            <p className="text-medical-blue dark:text-blue-400 font-semibold">
-              An increase in any one component must be offset by a decrease in another, or else intracranial pressure will rise.
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">ICP Norms & Cerebral Perfusion Pressure</h3>
+          
+          <div className="mb-5">
+            <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">Intracranial Pressure (ICP) Values:</h4>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-green-50 dark:bg-green-900 border border-green-300 dark:border-green-700 rounded-lg p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">Normal ICP</p>
+                    <p className="text-2xl font-bold text-medical-green dark:text-green-400">5-15 mmHg</p>
+                  </div>
+                  <span className="text-3xl">✓</span>
+                </div>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">Typical range in healthy adults</p>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900 border border-red-300 dark:border-red-700 rounded-lg p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">Treatment Threshold</p>
+                    <p className="text-2xl font-bold text-medical-red dark:text-red-400">&gt;20-22 mmHg</p>
+                  </div>
+                  <span className="text-3xl">⚠️</span>
+                </div>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">Sustained elevation requiring intervention</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 dark:bg-blue-900 border border-blue-300 dark:border-blue-700 rounded-lg p-5">
+            <h4 className="font-semibold text-medical-blue dark:text-blue-300 mb-3">Cerebral Perfusion Pressure (CPP):</h4>
+            <div className="bg-white dark:bg-gray-800 rounded p-4 mb-3 text-center">
+              <p className="text-2xl font-bold text-medical-blue dark:text-blue-400">CPP = MAP - ICP</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Mean Arterial Pressure minus Intracranial Pressure</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-3 text-sm">
+              <div>
+                <p className="font-semibold mb-1">Target CPP:</p>
+                <p><strong className="text-medical-blue dark:text-blue-400">60-70 mmHg</strong> (minimum 50-60 mmHg)</p>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">Why CPP Matters:</p>
+                <p>Ensures adequate cerebral blood flow and oxygen delivery to brain tissue</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 text-sm bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+            <p className="font-semibold mb-2">Cerebral Autoregulation:</p>
+            <p>
+              In healthy individuals, the brain maintains constant blood flow across a MAP range of 50-150 mmHg. 
+              However, <strong>autoregulation may be impaired</strong> in brain injury, making CPP management critical.
             </p>
           </div>
-          <p>
-            An EVD exploits this principle by removing CSF, thereby reducing pressure when other components 
-            (brain tissue swelling or blood volume) increase. However, once compensatory mechanisms are exhausted, 
-            small volume increases lead to large ICP rises.
-          </p>
         </section>
 
+        {/* Clinical Manifestations of Elevated ICP */}
         <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">ICP Norms & Pathophysiology</h3>
-          <div className="space-y-3">
-            <div className="flex items-center gap-4">
-              <div className="bg-green-50 dark:bg-green-900 border border-green-300 dark:border-green-700 rounded-lg px-4 py-2 min-w-[120px]">
-                <p className="text-sm font-semibold">Normal ICP</p>
-                <p className="text-lg font-bold text-medical-green dark:text-green-400">5-15 mmHg</p>
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-4">Clinical Manifestations of Elevated ICP</h3>
+          
+          <div className="mb-4">
+            <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">Common Signs & Symptoms:</h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              <div className="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-3">
+                <p className="font-semibold text-sm mb-2">Early/Chronic Signs:</p>
+                <ul className="text-sm space-y-1 list-disc list-inside">
+                  <li>Headache (worse in morning, with Valsalva)</li>
+                  <li>Nausea and vomiting</li>
+                  <li>Papilledema (chronic elevation)</li>
+                  <li>Visual changes</li>
+                </ul>
               </div>
-              <p className="text-sm">Typical range in healthy adults</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="bg-red-50 dark:bg-red-900 border border-red-300 dark:border-red-700 rounded-lg px-4 py-2 min-w-[120px]">
-                <p className="text-sm font-semibold">Treatment</p>
-                <p className="text-lg font-bold text-medical-red dark:text-red-400">&gt;20-22 mmHg</p>
+              <div className="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-3">
+                <p className="font-semibold text-sm mb-2">Progressive Signs:</p>
+                <ul className="text-sm space-y-1 list-disc list-inside">
+                  <li>Altered mental status</li>
+                  <li>Pupillary changes (dilation, asymmetry)</li>
+                  <li>Motor deficits</li>
+                  <li>Seizures</li>
+                </ul>
               </div>
-              <p className="text-sm">Sustained elevation typically treated in neurocritical care</p>
             </div>
           </div>
+
+          <div className="bg-red-50 dark:bg-red-900 border-2 border-red-400 dark:border-red-700 rounded-lg p-5">
+            <h4 className="font-semibold text-red-700 dark:text-red-400 mb-3 flex items-center gap-2">
+              <span className="text-2xl">🚨</span>
+              Cushing's Triad (Late Sign of Herniation)
+            </h4>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="bg-white dark:bg-gray-800 rounded p-3 text-center">
+                <p className="font-bold text-red-600 dark:text-red-400 text-lg">Hypertension</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Widened pulse pressure</p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 rounded p-3 text-center">
+                <p className="font-bold text-red-600 dark:text-red-400 text-lg">Bradycardia</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Reflex response to HTN</p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 rounded p-3 text-center">
+                <p className="font-bold text-red-600 dark:text-red-400 text-lg">Irregular Respirations</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Brainstem compression</p>
+              </div>
+            </div>
+            <p className="text-sm mt-4 font-semibold text-red-800 dark:text-red-300">
+              ⚠️ Warning: These are LATE findings indicating imminent herniation. Do not wait for Cushing's triad to treat elevated ICP.
+            </p>
+          </div>
         </section>
+
       </div>
     </div>
   )
