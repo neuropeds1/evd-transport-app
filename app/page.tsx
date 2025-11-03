@@ -94,36 +94,94 @@ function AnatomyContent() {
         <section>
           <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">Ventricular System Overview</h3>
           <p className="mb-4">
-            The ventricular system consists of interconnected spaces within the brain that contain cerebrospinal fluid (CSF). 
-            Understanding this anatomy is crucial for EVD placement and management.
+            The ventricular system is an interconnected series of cavities within the brain filled with cerebrospinal fluid (CSF). 
+            This system consists of four main ventricles that communicate with each other and with the subarachnoid space.
           </p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Lateral ventricles</strong> (right and left) - Located in each cerebral hemisphere</li>
-            <li><strong>Third ventricle</strong> - Midline structure between the thalami</li>
-            <li><strong>Fourth ventricle</strong> - Located between the brainstem and cerebellum</li>
-          </ul>
+          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-4">
+            <p className="font-semibold mb-3 text-medical-blue dark:text-blue-400">The Four Ventricles:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Lateral ventricles</strong> (right and left) - C-shaped cavities within each cerebral hemisphere (capacity: 7-10 mL each)</li>
+              <li><strong>Third ventricle</strong> - Midline structure in the diencephalon, between the thalami</li>
+              <li><strong>Fourth ventricle</strong> - Located in the hindbrain, between the brainstem and cerebellum</li>
+              <li><strong>Central canal</strong> - Continuous with the fourth ventricle, extending through the spinal cord</li>
+            </ul>
+          </div>
+          <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+            <p className="text-sm">
+              <strong>Clinical Note:</strong> Lateral ventricular asymmetry occurs in 5-12% of the population and is generally a normal variant.
+            </p>
+          </div>
         </section>
 
         <section>
           <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">CSF Flow Pathway</h3>
+          <p className="mb-4">
+            CSF circulates through a specific pathway from production to reabsorption:
+          </p>
+          
+          <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-4">
+            <p className="font-semibold mb-3">Production:</p>
+            <ul className="list-disc pl-6 space-y-2 text-sm">
+              <li>CSF is produced by the <strong>choroid plexus</strong> - specialized ependymal cells with a rich capillary network</li>
+              <li>Production rate: <strong>~20-25 mL/hour</strong> (approximately 500 mL/day)</li>
+              <li>Total CSF volume in the system: <strong>~150 mL</strong></li>
+              <li>The entire CSF volume is replaced approximately 3-4 times daily</li>
+            </ul>
+          </div>
+
           <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
+            <p className="font-semibold mb-3">Circulation Route:</p>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Lateral ventricles</strong> → drain through <strong>foramina of Monro</strong> → <strong>third ventricle</strong></li>
-              <li><strong>Third ventricle</strong> → via <strong>aqueduct of Sylvius</strong> → <strong>fourth ventricle</strong></li>
-              <li><strong>Fourth ventricle</strong> → via lateral apertures (Luschka) and median aperture (Magendie) → <strong>subarachnoid space</strong></li>
+              <li><strong>Lateral ventricles</strong> → through <strong>interventricular foramina (foramina of Monro)</strong> → <strong>third ventricle</strong></li>
+              <li><strong>Third ventricle</strong> → via <strong>cerebral aqueduct (aqueduct of Sylvius)</strong> → <strong>fourth ventricle</strong></li>
+              <li><strong>Fourth ventricle</strong> → via lateral apertures (<strong>foramina of Luschka</strong>) and median aperture (<strong>foramen of Magendie</strong>) → <strong>subarachnoid space</strong></li>
+              <li><strong>Subarachnoid space</strong> → reabsorbed via <strong>arachnoid granulations</strong> into the venous system (superior sagittal sinus)</li>
             </ol>
           </div>
         </section>
 
         <section>
-          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">EVD Placement</h3>
-          <div className="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-            <p className="font-semibold mb-2">Clinical Relevance:</p>
-            <p>
-              The EVD tip typically sits in the <strong>lateral ventricle near the foramen of Monro</strong>. 
-              This explains why we level at the tragus (external auditory meatus) - it approximates the height 
-              of the ventricular system. Proper leveling ensures drainage occurs only when ICP exceeds the set threshold.
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">EVD Placement: Anatomical Considerations</h3>
+          
+          <div className="mb-4">
+            <h4 className="font-semibold text-medical-blue dark:text-blue-400 mb-2">Typical EVD Catheter Position:</h4>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>The catheter tip is typically placed in the <strong>frontal horn of the lateral ventricle</strong>, near the <strong>foramen of Monro</strong></li>
+              <li>This location provides optimal drainage and ICP monitoring</li>
+              <li>The foramen of Monro connects the lateral ventricle to the third ventricle, making it a strategic point for CSF drainage</li>
+            </ul>
+          </div>
+
+          <div className="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-4">
+            <p className="font-semibold mb-2">Leveling Reference Point:</p>
+            <ul className="list-disc pl-6 space-y-2 text-sm">
+              <li>EVDs are leveled at the <strong>external auditory meatus (tragus)</strong></li>
+              <li>This anatomical landmark approximates the height of the <strong>foramen of Monro</strong> and the ventricular system</li>
+              <li>Proper leveling ensures that drainage occurs only when ICP exceeds the set threshold</li>
+              <li>If the drain is positioned below this level, excessive drainage may occur; if above, inadequate drainage results</li>
+            </ul>
+          </div>
+
+          <div className="bg-blue-50 dark:bg-blue-900 border-l-4 border-blue-400 dark:border-blue-600 p-4">
+            <p className="font-semibold mb-2">💡 Why the Tragus?</p>
+            <p className="text-sm">
+              The external auditory meatus lies at approximately the same horizontal plane as the foramen of Monro when the patient 
+              is supine with the head in a neutral position. This makes it a reliable external landmark for calibrating the drainage 
+              system to the actual intraventricular pressure.
             </p>
+          </div>
+        </section>
+
+        <section>
+          <h3 className="text-xl font-semibold text-medical-blue dark:text-blue-400 mb-3">Clinical Relevance to EVD Management</h3>
+          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+            <p className="mb-3">Understanding ventricular anatomy explains several key EVD management principles:</p>
+            <ol className="list-decimal pl-6 space-y-2 text-sm">
+              <li><strong>Obstruction Sites:</strong> Blockages can occur at narrow passages (foramina of Monro, aqueduct of Sylvius), leading to hydrocephalus</li>
+              <li><strong>Drainage Dynamics:</strong> The siphon effect of an EVD works because the catheter creates a direct connection from the lateral ventricle to an external collection system</li>
+              <li><strong>Position-Dependent Drainage:</strong> Changes in patient position alter the hydrostatic pressure gradient between the ventricles and the drainage chamber, which is why clamping during repositioning is critical</li>
+              <li><strong>Bilateral vs Unilateral Pathology:</strong> The two lateral ventricles are separate; pathology may affect them asymmetrically</li>
+            </ol>
           </div>
         </section>
       </div>
