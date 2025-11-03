@@ -187,7 +187,7 @@ export default function EVDChecklist() {
                   onChange={() => toggleItem('or', item.id)}
                   className="mt-1 mr-3 w-5 h-5 cursor-pointer"
                 />
-                <span className={`flex-1 ${item.checked ? 'line-through text-gray-500 dark:text-gray-400' : 'text-gray-800 dark:text-gray-200'}`}>
+                <span className="flex-1 text-gray-800 dark:text-gray-200">
                   {item.title}
                 </span>
               </label>
@@ -210,35 +210,51 @@ export default function EVDChecklist() {
           </div>
           
           <div className="space-y-6 mb-6">
-            {anesthesiaSections.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
-                <h4 className="text-lg font-semibold text-medical-blue dark:text-blue-400 mb-3 pb-2 border-b-2 border-blue-200 dark:border-blue-700">
-                  {section.title}
-                </h4>
-                <div className="space-y-3">
-                  {section.items.map((item) => (
-                    <label
-                      key={item.id}
-                      className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                        item.checked
-                          ? 'bg-green-50 dark:bg-green-900 border-green-300 dark:border-green-700'
-                          : 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
-                      }`}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={item.checked}
-                        onChange={() => toggleItem('anesthesia', item.id)}
-                        className="mt-1 mr-3 w-5 h-5 cursor-pointer"
-                      />
-                      <span className={`flex-1 ${item.checked ? 'line-through text-gray-500 dark:text-gray-400' : 'text-gray-800 dark:text-gray-200'}`}>
-                        {item.title}
-                      </span>
-                    </label>
-                  ))}
+            {anesthesiaSections.map((section, sectionIdx) => {
+              const isInformSurgeonSection = section.title.includes('Inform the Surgeon')
+              return (
+                <div 
+                  key={sectionIdx}
+                  className={`rounded-lg p-4 ${
+                    isInformSurgeonSection 
+                      ? 'bg-red-50 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-700' 
+                      : 'bg-blue-50/30 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800'
+                  }`}
+                >
+                  <h4 className={`text-lg font-bold mb-3 pb-2 border-b-2 ${
+                    isInformSurgeonSection
+                      ? 'text-red-700 dark:text-red-400 border-red-300 dark:border-red-600'
+                      : 'text-medical-blue dark:text-blue-400 border-blue-300 dark:border-blue-600'
+                  }`}>
+                    {isInformSurgeonSection && '⚠️ '}{section.title}
+                  </h4>
+                  <div className="space-y-3 mt-4">
+                    {section.items.map((item) => (
+                      <label
+                        key={item.id}
+                        className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                          item.checked
+                            ? 'bg-green-50 dark:bg-green-900 border-green-300 dark:border-green-700'
+                            : isInformSurgeonSection
+                            ? 'bg-white dark:bg-gray-800 border-red-200 dark:border-red-800 hover:border-red-300 dark:hover:border-red-700'
+                            : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={item.checked}
+                          onChange={() => toggleItem('anesthesia', item.id)}
+                          className="mt-1 mr-3 w-5 h-5 cursor-pointer"
+                        />
+                        <span className="flex-1 text-gray-800 dark:text-gray-200">
+                          {item.title}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <QuickReference section="anesthesia" />
