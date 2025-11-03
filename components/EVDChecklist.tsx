@@ -9,6 +9,11 @@ interface ChecklistItem {
   description?: string
 }
 
+interface ChecklistSection {
+  title: string
+  items: ChecklistItem[]
+}
+
 export default function EVDChecklist() {
   const [activeSection, setActiveSection] = useState<'or' | 'anesthesia' | 'notes'>('or')
   
@@ -27,43 +32,56 @@ export default function EVDChecklist() {
     { id: 'handoff-details', title: 'Provide complete EVD handoff details (status, output, ICP, issues)', checked: false },
   ])
 
-  const [anesthesiaChecklist, setAnesthesiaChecklist] = useState<ChecklistItem[]>([
-    // Preoperative Assessment
-    { id: 'baseline-neuro-exam', title: 'Obtain baseline neurological examination', checked: false },
-    { id: 'review-evd-setting', title: 'Review EVD (cm H₂O) setting', checked: false },
-    { id: 'review-csf-output', title: 'Review hourly CSF output to obtain baseline', checked: false },
-    { id: 'review-icp-trends', title: 'Review baseline ICP mm Hg, ICP trends, and available multimodal monitoring data', checked: false },
-    { id: 'review-csf-appearance', title: 'Review baseline CSF color and consistency', checked: false },
-    { id: 'review-clamp-trials', title: 'Review EVD clamp trials data if available', checked: false },
-    { id: 'review-coagulation', title: 'Review the coagulation profile', checked: false },
-    { id: 'review-antibiotic-plan', title: 'Review the antibiotic plan if anticipating a new EVD/LD insertion in the operating room', checked: false },
-    { id: 'preop-handoff', title: 'Provide EVD and LD details during preoperative handoff between intensive care/ward providers and the anesthesia providers', checked: false },
-    
-    // Transporting Patients with EVD
-    { id: 'transport-clamp-decision', title: 'Confirm decision to travel with EVD clamp vs. open', checked: false },
-    { id: 'transport-clamp-location', title: 'If traveling with an EVD clamp, ensure clamping at the distal port on the CSF collecting system', checked: false },
-    { id: 'transport-hob', title: 'Maintain head of bed status as in the ICU', checked: false },
-    { id: 'transport-iv-pole', title: 'Confirm availability of a dedicated intravenous pole for EVD mount', checked: false },
-    { id: 'transport-leveling', title: 'Confirm leveling EVD at the external auditory meatus', checked: false },
-    { id: 'transport-icp-monitoring', title: 'Enable ICP monitoring during transport', checked: false },
-    { id: 'transport-medications', title: 'Confirm availability of medications needed to treat intracranial hypertension during transport', checked: false },
-    
-    // Intraoperative Management of Indwelling Drains
-    { id: 'intraop-transducer', title: 'Prepare the transducer cable', checked: false },
-    { id: 'intraop-label', title: 'Identify EVD tubing by appropriate unique labeling', checked: false },
-    { id: 'intraop-hob', title: 'Confirm HOB status during the surgical procedure', checked: false },
-    { id: 'intraop-leveling', title: 'Confirm the leveling of EVD at the external auditory meatus', checked: false },
-    { id: 'intraop-icp-baseline', title: 'Obtain the ICP waveform and baseline ICP value', checked: false },
-    { id: 'intraop-record-setting', title: 'Record q 1-h EVD setting', checked: false },
-    { id: 'intraop-record-icp', title: 'Record at least q 1-h ICP values (recorded with EVD closed to drain)', checked: false },
-    { id: 'intraop-record-output', title: 'Record at least q 1-h EVD drain output (expressed in mL)', checked: false },
-    { id: 'intraop-handoff', title: 'Provide EVD details during intraoperative handoffs between anesthesia providers', checked: false },
-    
-    // Inform the Surgeon Criteria
-    { id: 'inform-drainage-decline', title: 'Inform surgeon: Sudden decline in CSF drainage or no drainage from EVD, or occlusion of EVD', checked: false },
-    { id: 'inform-high-output', title: 'Inform surgeon: If the drain output is >15-20 mL at any time or in any given hour', checked: false },
-    { id: 'inform-csf-color-change', title: 'Inform surgeon: Sudden change in CSF color (e.g., bright red color may indicate bleeding from a ruptured aneurysm)', checked: false },
-    { id: 'inform-waveform-loss', title: 'Inform surgeon: Dampening or loss of the ICP waveform', checked: false },
+  const [anesthesiaSections, setAnesthesiaSections] = useState<ChecklistSection[]>([
+    {
+      title: 'Preoperative Assessment',
+      items: [
+        { id: 'baseline-neuro-exam', title: 'Obtain baseline neurological examination', checked: false },
+        { id: 'review-evd-setting', title: 'Review EVD (cm H₂O) setting', checked: false },
+        { id: 'review-csf-output', title: 'Review hourly CSF output to obtain baseline', checked: false },
+        { id: 'review-icp-trends', title: 'Review baseline ICP mm Hg, ICP trends, and available multimodal monitoring data', checked: false },
+        { id: 'review-csf-appearance', title: 'Review baseline CSF color and consistency', checked: false },
+        { id: 'review-clamp-trials', title: 'Review EVD clamp trials data if available', checked: false },
+        { id: 'review-coagulation', title: 'Review the coagulation profile', checked: false },
+        { id: 'review-antibiotic-plan', title: 'Review the antibiotic plan if anticipating a new EVD/LD insertion in the operating room', checked: false },
+        { id: 'preop-handoff', title: 'Provide EVD and LD details during preoperative handoff between intensive care/ward providers and the anesthesia providers', checked: false },
+      ]
+    },
+    {
+      title: 'Transporting Patients with EVD',
+      items: [
+        { id: 'transport-clamp-decision', title: 'Confirm decision to travel with EVD clamp vs. open', checked: false },
+        { id: 'transport-clamp-location', title: 'If traveling with an EVD clamp, ensure clamping at the distal port on the CSF collecting system', checked: false },
+        { id: 'transport-hob', title: 'Maintain head of bed status as in the ICU', checked: false },
+        { id: 'transport-iv-pole', title: 'Confirm availability of a dedicated intravenous pole for EVD mount', checked: false },
+        { id: 'transport-leveling', title: 'Confirm leveling EVD at the external auditory meatus', checked: false },
+        { id: 'transport-icp-monitoring', title: 'Enable ICP monitoring during transport', checked: false },
+        { id: 'transport-medications', title: 'Confirm availability of medications needed to treat intracranial hypertension during transport', checked: false },
+      ]
+    },
+    {
+      title: 'Intraoperative Management of Indwelling Drains',
+      items: [
+        { id: 'intraop-transducer', title: 'Prepare the transducer cable', checked: false },
+        { id: 'intraop-label', title: 'Identify EVD tubing by appropriate unique labeling', checked: false },
+        { id: 'intraop-hob', title: 'Confirm HOB status during the surgical procedure', checked: false },
+        { id: 'intraop-leveling', title: 'Confirm the leveling of EVD at the external auditory meatus', checked: false },
+        { id: 'intraop-icp-baseline', title: 'Obtain the ICP waveform and baseline ICP value', checked: false },
+        { id: 'intraop-record-setting', title: 'Record q 1-h EVD setting', checked: false },
+        { id: 'intraop-record-icp', title: 'Record at least q 1-h ICP values (recorded with EVD closed to drain)', checked: false },
+        { id: 'intraop-record-output', title: 'Record at least q 1-h EVD drain output (expressed in mL)', checked: false },
+        { id: 'intraop-handoff', title: 'Provide EVD details during intraoperative handoffs between anesthesia providers', checked: false },
+      ]
+    },
+    {
+      title: 'Inform the Surgeon if Any of the Following',
+      items: [
+        { id: 'inform-drainage-decline', title: 'Sudden decline in CSF drainage or no drainage from EVD, or occlusion of EVD', checked: false },
+        { id: 'inform-high-output', title: 'If the drain output is >15-20 mL at any time or in any given hour', checked: false },
+        { id: 'inform-csf-color-change', title: 'Sudden change in CSF color (e.g., bright red color may indicate bleeding from a ruptured aneurysm)', checked: false },
+        { id: 'inform-waveform-loss', title: 'Dampening or loss of the ICP waveform', checked: false },
+      ]
+    }
   ])
 
   const [notes, setNotes] = useState('')
@@ -74,21 +92,33 @@ export default function EVDChecklist() {
         item.id === id ? { ...item, checked: !item.checked } : item
       ))
     } else {
-      setAnesthesiaChecklist(items => items.map(item => 
-        item.id === id ? { ...item, checked: !item.checked } : item
-      ))
+      setAnesthesiaSections(sections => sections.map(sec => ({
+        ...sec,
+        items: sec.items.map(item => 
+          item.id === id ? { ...item, checked: !item.checked } : item
+        )
+      })))
     }
   }
 
   const clearAll = () => {
     setOrChecklist(items => items.map(item => ({ ...item, checked: false })))
-    setAnesthesiaChecklist(items => items.map(item => ({ ...item, checked: false })))
+    setAnesthesiaSections(sections => sections.map(sec => ({
+      ...sec,
+      items: sec.items.map(item => ({ ...item, checked: false }))
+    })))
     setNotes('')
   }
 
   const getCompletionPercentage = (items: ChecklistItem[]) => {
     const checked = items.filter(item => item.checked).length
     return Math.round((checked / items.length) * 100)
+  }
+
+  const getSectionsCompletionPercentage = (sections: ChecklistSection[]) => {
+    const allItems = sections.flatMap(sec => sec.items)
+    const checked = allItems.filter(item => item.checked).length
+    return Math.round((checked / allItems.length) * 100)
   }
 
   return (
@@ -174,31 +204,40 @@ export default function EVDChecklist() {
             <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Anesthesia Considerations</h3>
             <div className="bg-blue-50 dark:bg-blue-900 px-4 py-2 rounded-lg">
               <span className="text-sm font-semibold text-medical-blue dark:text-blue-400">
-                {getCompletionPercentage(anesthesiaChecklist)}% Complete
+                {getSectionsCompletionPercentage(anesthesiaSections)}% Complete
               </span>
             </div>
           </div>
           
-          <div className="space-y-3 mb-6">
-            {anesthesiaChecklist.map((item) => (
-              <label
-                key={item.id}
-                className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                  item.checked
-                    ? 'bg-green-50 dark:bg-green-900 border-green-300 dark:border-green-700'
-                    : 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  checked={item.checked}
-                  onChange={() => toggleItem('anesthesia', item.id)}
-                  className="mt-1 mr-3 w-5 h-5 cursor-pointer"
-                />
-                <span className={`flex-1 ${item.checked ? 'line-through text-gray-500 dark:text-gray-400' : 'text-gray-800 dark:text-gray-200'}`}>
-                  {item.title}
-                </span>
-              </label>
+          <div className="space-y-6 mb-6">
+            {anesthesiaSections.map((section, sectionIdx) => (
+              <div key={sectionIdx}>
+                <h4 className="text-lg font-semibold text-medical-blue dark:text-blue-400 mb-3 pb-2 border-b-2 border-blue-200 dark:border-blue-700">
+                  {section.title}
+                </h4>
+                <div className="space-y-3">
+                  {section.items.map((item) => (
+                    <label
+                      key={item.id}
+                      className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                        item.checked
+                          ? 'bg-green-50 dark:bg-green-900 border-green-300 dark:border-green-700'
+                          : 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={item.checked}
+                        onChange={() => toggleItem('anesthesia', item.id)}
+                        className="mt-1 mr-3 w-5 h-5 cursor-pointer"
+                      />
+                      <span className={`flex-1 ${item.checked ? 'line-through text-gray-500 dark:text-gray-400' : 'text-gray-800 dark:text-gray-200'}`}>
+                        {item.title}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
 
